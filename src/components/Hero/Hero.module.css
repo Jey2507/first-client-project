@@ -31,6 +31,7 @@
 }
 
 .divHero {
+    width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url('../../assets/images/about/ania_one_tel.jpg');
     background-size: cover;
     background-repeat: no-repeat;
