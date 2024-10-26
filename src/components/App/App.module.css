@@ -1,0 +1,13 @@
+.mainDiv {
+    max-width: 380px;
+    width: 100%;
+    background-color: #171520;
+    margin: 0 auto;
+}
+
+
+@media screen and (min-width: 769px) {
+    .mainDiv {
+        max-width: 780px;
+    }
+}

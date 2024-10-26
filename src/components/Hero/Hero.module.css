@@ -1,0 +1,122 @@
+.heroText {
+    margin: 0;
+    font-family: "Playwrite GB S", cursive;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: normal;
+    width: 240px;
+    line-height: 1.5;
+    color: white;
+    margin-bottom: 80px;
+    /* padding-top: 80px; */
+}
+
+.heroDescr {
+    margin: 0 auto;
+    color: rgb(245, 245, 245);
+    font-size: 16px;
+    margin-bottom: 32px;
+    font-family: "Delius", serif;
+    width: 280px;
+    text-align: center;
+    font-weight: 400;
+    font-style: normal;
+    padding: 6px;
+    background-color: #ab2c7a;
+    border-radius: 50%;
+}
+
+.image {
+    display: none;
+}
+
+.divHero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url('../../assets/images/about/ania_one_tel.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 100px 15px 88px 15px;
+}
+
+.divButton {
+    display: flex;
+    justify-content: center;
+    width: 280px;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.heroButtonOne {
+    background-color: #5f2ed2;
+    border: none;
+    color: aliceblue;
+    width: 132px;
+    height: 52px;
+    border-radius: 23% 50% 33% 31%;
+    padding: 2px 8px;
+    transition: background-color 400ms linear;
+}
+
+.heroButtonOne:hover,
+.heroButtonOne:focus {
+    background-color: #db2a97;
+}
+
+.heroButtonTwo {
+    background-color: #5f2ed2;
+    border: none;
+    color: aliceblue;
+    width: 132px;
+    height: 52px;
+    border-radius: 33% 22% 44% 30%;
+    padding: 2px 8px;
+    transition: background-color 400ms linear, box-shadow 400ms linear;
+}
+
+.heroButtonTwo:hover,
+.heroButtonTwo:focus {
+    background-color: #db2a97;
+}
+
+@media screen and (min-width: 769px) {
+    .divHero {
+        width: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)),url('../../assets/images/about/ania_one_back.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        padding: 80px 40px;
+        gap: 40px;
+    }
+
+    .image {
+        display: block;
+        width: 350px;
+        height: 350px;
+        border-radius: 16px;
+    }
+
+    .heroText {
+        font-size: 32px;
+        width: 300px;
+        font-weight: 800;
+        margin-bottom: 40px;
+    }
+
+    .heroDescr {
+        font-size: 20px;
+        width: 320px;
+    }
+
+    .heroButtonOne {
+        width: 148px;
+    }
+
+    .heroButtonTwo {
+        width: 148px;
+    }
+
+    .divButton {
+        width: 318px;
+    }
+}
