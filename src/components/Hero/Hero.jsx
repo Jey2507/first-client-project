@@ -12,7 +12,7 @@ export default function Hero() {
                     <button className={css.heroButtonTwo}>Dołącz do kursu</button>
                 </div>
             </div>
-            <img className={css.image} src="../../src/assets/images/about/ania_one_tablet.jpg" alt="ania" />
+            <img className={css.image} src="./../src/assets/images/about/ania_one_tablet.jpg" alt="ania" />
         </section>
     )
 }
