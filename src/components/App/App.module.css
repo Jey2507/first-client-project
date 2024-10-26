@@ -11,3 +11,9 @@
         max-width: 780px;
     }
 }
+
+@media screen and (min-width: 1440px) {
+    .mainDiv {
+        max-width: 1440px;
+    }
+}

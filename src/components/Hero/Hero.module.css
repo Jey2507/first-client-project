@@ -22,7 +22,7 @@
     font-weight: 400;
     font-style: normal;
     padding: 6px;
-    background-color: #ab2c7a;
+    background-color: #a4106bd0;
     border-radius: 50%;
 }
 
@@ -79,6 +79,10 @@
     background-color: #db2a97;
 }
 
+.imageDesc {
+    display: none;
+}
+
 @media screen and (min-width: 769px) {
     .divHero {
         width: 100%;
@@ -119,5 +123,56 @@
 
     .divButton {
         width: 318px;
+    }
+}
+
+
+@media screen and (min-width: 1440px) {
+    .divHero {
+        gap: 0;
+        justify-content: space-between;
+        padding: 80px 90px;
+    }
+
+    .image {
+        display: none;
+    }
+
+    .imageDesc {
+        width: 380px;
+        height: 100%;
+        border-radius: 12px;
+    }
+
+    .heroText {
+        width: 800px;
+        font-weight: 900;
+        font-size: 44px;
+        margin-bottom: 20px;
+    }
+
+    .heroDescr {
+        background: none;
+        text-align: start;
+        margin: 0px 0px 60px 0px;
+        width: 800px;
+    }
+
+    .divButton {
+        width: 800px;
+        justify-content: start;
+        gap: 40px;
+    }
+
+    .heroButtonOne {
+        width: 180px;
+        height: 60px;
+        font-size: 18px;
+    }
+
+    .heroButtonTwo {
+        width: 180px;
+        height: 60px;
+        font-size: 18px;
     }
 }
