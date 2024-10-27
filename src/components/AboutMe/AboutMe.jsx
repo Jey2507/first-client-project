@@ -1,10 +1,9 @@
 import css from "../AboutMe/AboutMe.module.css"
 import imagePathAboutMe from "../../assets/images/about/ania_three_tel.jpg";
-import clsx from 'clsx';
 
 export default function AboutMe() {
     return (
-        <section className={css.sectionAbout}>
+        <section id="aboutMe" className={css.sectionAbout}>
             <h2 className={css.mainText}>O mnie</h2>
 
                 <div className={css.divContainer}>

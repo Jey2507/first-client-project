@@ -11,8 +11,8 @@ export default function Hero() {
                 <p className={css.heroDescr}>Hej, jestem Ania i ja napewno wiem jak zrobić ze by twój content przynosił Ci większy dochód.</p>
 
                 <div className={css.divButton}>
-                    <button className={css.heroButtonOne}>Dowiedz się więcej</button>
-                    <button className={css.heroButtonTwo}>Dołącz do kursu</button>
+                    <a className={css.heroButtonOne} href="#aboutMe">Dowiedz się więcej</a>
+                    <a className={css.heroButtonTwo}>Dołącz do kursu</a>
                 </div>
             </div>
             <img className={css.image} src={imagePath} alt="ania" />

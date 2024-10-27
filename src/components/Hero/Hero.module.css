@@ -49,8 +49,12 @@
 }
 
 .heroButtonOne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #5f2ed2;
     border: none;
+    text-align: center;
     color: aliceblue;
     width: 132px;
     height: 52px;
@@ -65,6 +69,10 @@
 }
 
 .heroButtonTwo {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #5f2ed2;
     border: none;
     color: aliceblue;
