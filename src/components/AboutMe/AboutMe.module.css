@@ -44,7 +44,6 @@
     width: 290px;
     margin: 0 auto 12px auto;
     text-align: center;
-
 }
 
 .descrAbout {
@@ -71,7 +70,6 @@
     margin: 0 auto;
     padding: 16px;
     border-radius: 20px;
-    position: relative;
 }
 
 .textAchi {
@@ -99,22 +97,87 @@
     gap: 8px;
 }
 
+.itemAchi {
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 0 2px rgba(228, 95, 245, 0.9), 0 0 16px rgba(228, 95, 245, 0.8);
+}
+
+.icon {
+    display: none;
+}
+
 @media screen and (min-width: 768px) {
     .sectionAbout {
         padding-top: 80px;
     }
 
     .mainText {
-        font-size: 32px;
+        font-size: 34px;
         font-weight: 700;
         margin-bottom: 32px;
     }
-/* 
+
+    .imageMe {
+        margin: 0;
+    }
+
     .divContent {
-    } */
+        padding: 18px 20px;
+        margin: 0 ;
+    }
+
+    .textSkils {
+        font-size: 22px;
+        width: 100%;
+        margin: 0 auto 8px auto;
+    }
+
+    .descrAbout {
+        font-size: 20px;
+    }
+    
+    .listMe {
+        margin-bottom: 16px;
+    }
 
     .divContainer {
         flex-direction: row;
-        gap: 20px;
+        justify-content: center;
+        gap: 16px;
     }
+
+    .divAchi {
+        max-width: 768px;
+        padding: 16px 24px;
+        border-radius: 20px;
+    }
+
+    .textAchi {
+        font-size: 28px;
+        margin-top: 0;
+        margin-bottom: 24px;
+    }
+
+    .descrAchi {
+        font-size: 22px;
+    }
+
+    /* .listAchi {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    } */
+
+    .itemAchi {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .icon {
+        display: block;
+    }
+    
+    
 }

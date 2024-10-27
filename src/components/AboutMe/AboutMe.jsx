@@ -1,5 +1,11 @@
 import css from "../AboutMe/AboutMe.module.css"
 import imagePathAboutMe from "../../assets/images/about/ania_three_tel.jpg";
+import { AiTwotoneBulb } from "react-icons/ai";
+import { FaInstagramSquare } from "react-icons/fa";
+import { PiVideoFill } from "react-icons/pi";
+import { FaLemon } from "react-icons/fa6";
+import { GrUserExpert } from "react-icons/gr";
+import { RiNumber8 } from "react-icons/ri";
 
 export default function AboutMe() {
     return (
@@ -30,30 +36,36 @@ export default function AboutMe() {
                     </div>
                 </div>
 
-            <div className={css.divAchi}>
-            <h2 className={css.textAchi}>Moje osiągnięcia</h2>
+                <div className={css.divAchi}>
+                    <h2 className={css.textAchi}>Moje osiągnięcia</h2>
+                    <ul className={css.listAchi}>
+                        <li className={css.itemAchi}>
+                            <RiNumber8 size="40px" color="#A8539D" className={css.icon}/>
+                            <p className={css.descrAchi}>- 8 lat w beauty branże</p>
+                        </li>
+                        <li className={css.itemAchi}>
+                            <AiTwotoneBulb size="40px" color="#8B5A83" className={css.icon}/>
+                            <p className={css.descrAchi}>- Tworcza</p>
+                        </li>
+                        <li className={css.itemAchi}>
+                            <FaInstagramSquare size="40px" color="#A56A9A" className={css.icon}/>
+                            <p className={css.descrAchi}>- Autorka online kursu InstaPaznokcie</p>
+                        </li>
+                        <li className={css.itemAchi}>
+                            <PiVideoFill size="40px" color="#BD7FB0" className={css.icon}/>
+                            <p className={css.descrAchi}>- Autorka online szkolenia ProReels</p>
+                        </li>
+                        <li className={css.itemAchi}>
+                            <FaLemon size="40px" color="#D492C8" className={css.icon}/>
+                            <p className={css.descrAchi}>- Reels na kilka🍋 wyświetleń</p>
+                        </li>
+                        <li className={css.itemAchi}>
+                            <GrUserExpert size="40px" color="#C773B5" className={css.icon}/>
+                            <p className={css.descrAchi}>- Ekspert z tworzenia contentu</p>
+                        </li>
+                    </ul>
+                </div>
 
-                <ul className={css.listAchi}>
-                    <li>
-                        <p className={css.descrAchi}>- Tworcza</p>
-                    </li>
-                    <li>
-                        <p className={css.descrAchi}>- Autorka online kursu InstaPaznokcie</p>
-                    </li>
-                    <li>
-                        <p className={css.descrAchi}>- Autorka online szkolenia ProReels</p>
-                    </li>
-                    <li>
-                        <p className={css.descrAchi}>- Reels na kilka🍋 wyświetleń</p>
-                    </li>
-                    <li>
-                        <p className={css.descrAchi}>- Ekspert z tworzenia contentu</p>
-                    </li>
-                    <li>
-                        <p className={css.descrAchi}>- 8 lat w beauty branże</p>
-                    </li>
-                </ul>
-            </div>
             
             
         </section>
