@@ -1,5 +1,5 @@
 .heroText {
-    margin: 0;
+    margin: 0px 0px 0px 12px;
     font-family: "Playwrite GB S", cursive;
     font-size: 22px;
     font-weight: 400;
@@ -31,6 +31,7 @@
 }
 
 .divHero {
+    max-width: 425px;
     width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url('../../assets/images/about/ania_one_tel.jpg');
     background-size: cover;
@@ -83,15 +84,15 @@
     display: none;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
     .divHero {
-        width: 100%;
+        max-width: 768px;
         background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)),url('../../assets/images/about/ania_one_back.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;
         padding: 80px 40px;
-        gap: 40px;
+        gap: 30px;
     }
 
     .image {
@@ -129,9 +130,14 @@
 
 @media screen and (min-width: 1440px) {
     .divHero {
+        max-width: 1440px;
+        background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)),url('../../assets/images/about/ania_one_desc.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
         gap: 0;
         justify-content: space-between;
-        padding: 80px 90px;
+        padding: 160px 90px 60px 90px;
+        height: 720px;
     }
 
     .image {
@@ -154,7 +160,7 @@
     .heroDescr {
         background: none;
         text-align: start;
-        margin: 0px 0px 60px 0px;
+        margin: 0px 0px 40px 0px;
         width: 800px;
     }
 
@@ -175,4 +181,5 @@
         height: 60px;
         font-size: 18px;
     }
+    
 }

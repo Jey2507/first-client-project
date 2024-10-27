@@ -1,0 +1,120 @@
+.sectionAbout {
+    width: 100%;
+    padding: 60px 0px;
+}
+
+.mainText {
+    margin: 0 auto;
+    width: max-content;
+    font-family: "Playwrite GB S", cursive;
+    font-size: 30px;
+    font-weight: 500;
+    color: #E51997;
+    margin-bottom: 24px;
+}
+
+.divContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.imageMe {
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 2px solid rgba(148, 4, 167, 0.8);
+}
+
+.divContent {
+    max-width: 360px;
+    width: 100%;
+    background-color: #ef51b2c2;
+    padding: 24px;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.textSkils {
+    font-family: "Playwrite GB S", cursive;
+    font-size: 18px;
+    font-weight: 600;
+    width: 290px;
+    margin: 0 auto 12px auto;
+    text-align: center;
+
+}
+
+.descrAbout {
+    font-family: "Delius", cursor;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.listMe {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.span {
+    font-weight: 600;
+    color: #dddddd;
+}
+
+.divAchi {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 16px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.textAchi {
+    text-align: center;
+    font-family: "Delius", cursor;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(245, 245, 245, 0.921);
+    text-shadow: 0 0 10px rgba(228, 95, 245, 0.9), 0 0 20px rgba(228, 95, 245, 0.8);
+}
+
+.descrAchi {
+    font-family: "Delius", cursor;
+    font-size: 18px;
+    font-weight: 600;
+    color: #dddddd;
+    width: max-content;
+    text-align: center;
+    margin: 0;
+}
+
+.listAchi {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+@media screen and (min-width: 768px) {
+    .sectionAbout {
+        padding-top: 80px;
+    }
+
+    .mainText {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 32px;
+    }
+/* 
+    .divContent {
+    } */
+
+    .divContainer {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
