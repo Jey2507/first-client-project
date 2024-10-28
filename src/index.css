@@ -4,6 +4,11 @@
   font-weight: 400;
 }
 
+p :is([lang="pl"]) {
+  font-size: 0.95em; 
+  line-height: 1.1; 
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -11,6 +16,8 @@ html {
 body {
   margin: 0;
   background-color: #171520;
+  font-feature-settings: "liga" 1; 
+  text-rendering: optimizeLegibility;
 }
 
 h1 {
