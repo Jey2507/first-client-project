@@ -2,6 +2,7 @@ import Header from '../Header/Header.jsx'
 import css from "../App/App.module.css"
 import Hero from '../Hero/Hero.jsx'
 import AboutMe from '../AboutMe/AboutMe.jsx'
+import SectionOneQuestion from '../SectionOneQuestion/SectionOneQuestion.jsx'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Hero />
       <AboutMe />
+      <SectionOneQuestion />
     </div>
   )
 }

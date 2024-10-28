@@ -1,0 +1,40 @@
+.container {
+    max-width: 360px;
+    margin: 0 auto 40px auto;
+    width: 100%;
+    padding: 16px 16px 40px 16px;
+    border-radius: 12px;
+    border: 2px solid rgba(189, 118, 156, 0.8)
+
+}
+
+.mainText {
+    margin: 0 auto;
+    width: max-content;
+    font-family: "Playwrite GB S", cursive;
+    font-size: 26px;
+    font-weight: 600;
+    color: rgb(246, 111, 183);
+    margin-bottom: 24px;
+}
+
+.textSecond {
+    font-family: "Playwrite GB S", cursive;
+    font-size: 18px;
+    font-weight: 400;
+    color: whitesmoke;
+    text-shadow: 0 0 4px rgba(228, 95, 245, 0.9), 0 0 4px rgba(228, 95, 245, 0.8);
+}
+
+.listQue {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.listQue li p {
+    margin: 0;
+    font-family: "Playwrite GB S", cursive;
+    font-size: 18px;
+    color: whitesmoke;
+}
