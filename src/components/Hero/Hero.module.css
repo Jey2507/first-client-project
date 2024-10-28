@@ -9,6 +9,8 @@
     color: #ffffff; 
     text-shadow: 4px 4px 8px #e59af880;
     margin-bottom: 80px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .spanText {
