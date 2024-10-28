@@ -7,7 +7,7 @@ export default function Hero() {
     return (
         <section className={css.divHero}>
             <div>
-                <h1 className={css.heroText}>Naucz się tworzyć rolki, dzięki którym zwiększysz swój dochód x2 </h1>
+                <h1 className={css.heroText}>Naucz się tworzyć rolki, dzięki którym zwiększysz swój <span className={css.spanText}>dochód x2</span></h1>
                 <div className={css.divBack}>
                     <p className={css.heroDescr}>Hej, jestem Ania i ja napewno wiem jak zrobić ze by twój content przynosił Ci większy dochód.</p>
                 </div>
