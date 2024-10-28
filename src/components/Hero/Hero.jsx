@@ -8,7 +8,10 @@ export default function Hero() {
         <section className={css.divHero}>
             <div>
                 <h1 className={css.heroText}>Naucz się tworzyć rolki, dzięki którym zwiększysz swój dochód x2 </h1>
-                <p className={css.heroDescr}>Hej, jestem Ania i ja napewno wiem jak zrobić ze by twój content przynosił Ci większy dochód.</p>
+                <div className={css.divBack}>
+                    <p className={css.heroDescr}>Hej, jestem Ania i ja napewno wiem jak zrobić ze by twój content przynosił Ci większy dochód.</p>
+                </div>
+               
 
                 <div className={css.divButton}>
                     <a className={css.heroButtonOne} href="#aboutMe">Dowiedz się więcej</a>

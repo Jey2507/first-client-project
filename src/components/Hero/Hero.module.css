@@ -2,13 +2,13 @@
     margin: 0px 0px 0px 12px;
     font-family: "Playwrite GB S", cursive;
     font-size: 22px;
-    font-weight: 400;
     font-style: normal;
     width: 240px;
     line-height: 1.5;
-    color: white;
+    font-weight: bold; 
+    color: #ffffff; 
+    text-shadow: 4px 4px 8px #e59af880;
     margin-bottom: 80px;
-    /* padding-top: 80px; */
 }
 
 .heroDescr {
@@ -22,8 +22,12 @@
     font-weight: 400;
     font-style: normal;
     padding: 6px;
-    background-color: #a4106bd0;
-    border-radius: 50%;
+}
+
+.divBack {
+    background-image: url("../../assets/images/reviews/ellipse.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .image {
@@ -93,6 +97,11 @@
 }
 
 @media screen and (min-width: 768px) {
+    .divBack {
+        background-size: 118% 130%;
+        background-repeat: no-repeat;
+    }
+
     .divHero {
         max-width: 768px;
         background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)),url('../../assets/images/about/ania_one_back.jpg');
@@ -138,6 +147,10 @@
 
 
 @media screen and (min-width: 1440px) {
+    .divBack {
+        background: none;
+    }
+
     .divHero {
         max-width: 1440px;
         background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)),url('../../assets/images/about/ania_one_desc.jpg');
