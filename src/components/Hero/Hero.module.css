@@ -47,7 +47,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
-    padding: 100px 15px 88px 15px;
+    padding: 80px 15px 100px 15px;
 }
 
 .divButton {
@@ -58,45 +58,24 @@
     margin: 0 auto;
 }
 
-.heroButtonOne {
+.heroButton {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #5f2ed2;
-    border: none;
+    border: 1px solid #5f2ed2;
+    background-color: #5f2ed280;
+    box-shadow: inset 0 0 10px #5f2ed280, 0 0 20px #5f2ed280;
+    border-radius: 12px;
     text-align: center;
     color: aliceblue;
     width: 132px;
     height: 52px;
-    border-radius: 23% 50% 33% 31%;
     padding: 2px 8px;
-    transition: background-color 400ms linear;
+    transition: border-color 250ms linear, color 250ms linear;
+    cursor: pointer;
 }
 
-.heroButtonOne:hover,
-.heroButtonOne:focus {
-    background-color: #db2a97;
-}
 
-.heroButtonTwo {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #5f2ed2;
-    border: none;
-    color: aliceblue;
-    width: 132px;
-    height: 52px;
-    border-radius: 33% 22% 44% 30%;
-    padding: 2px 8px;
-    transition: background-color 400ms linear, box-shadow 400ms linear;
-}
-
-.heroButtonTwo:hover,
-.heroButtonTwo:focus {
-    background-color: #db2a97;
-}
 
 .imageDesc {
     display: none;
@@ -116,6 +95,10 @@
         display: flex;
         padding: 80px 40px;
         gap: 30px;
+    }
+
+    .divHero br {
+        display: none;
     }
 
     .image {
@@ -138,13 +121,10 @@
         width: 320px;
     }
 
-    .heroButtonOne {
+    .heroButton {
         width: 148px;
     }
 
-    .heroButtonTwo {
-        width: 148px;
-    }
 
     .divButton {
         width: 318px;
@@ -198,16 +178,18 @@
         gap: 40px;
     }
 
-    .heroButtonOne {
+    .heroButton {
         width: 180px;
         height: 60px;
         font-size: 18px;
+        background: none;
+        box-shadow: none;
     }
 
-    .heroButtonTwo {
-        width: 180px;
-        height: 60px;
-        font-size: 18px;
+    .heroButton:hover,
+    .heroButton:focus {
+        border-color: #db2a97;
+        color: #db2a97;
     }
     
 }
