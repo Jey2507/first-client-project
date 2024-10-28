@@ -7,7 +7,7 @@
     line-height: 1.5;
     font-weight: bold; 
     color: #ffffff; 
-    text-shadow: 4px 4px 8px #e59af880;
+    text-shadow: 2px 2px 4px #e59af880;
     margin-bottom: 80px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -21,7 +21,7 @@
     margin: 0 auto;
     color: rgb(245, 245, 245);
     font-size: 16px;
-    margin-bottom: 32px;
+    margin-bottom: 64px;
     font-family: "Playwrite GB S", cursive;
     width: 280px;
     text-align: center;
@@ -47,7 +47,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
-    padding: 80px 15px 100px 15px;
+    padding: 80px 15px 68px 15px;
 }
 
 .divButton {

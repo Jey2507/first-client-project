@@ -197,6 +197,10 @@
 }
 
 @media screen and (min-width: 1440px) {
+    .sectionAbout {
+        padding-top: 60px;
+    }
+
     .mainText {
         font-size: 38px;
         margin-bottom: 36px;
