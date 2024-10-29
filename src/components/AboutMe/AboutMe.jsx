@@ -7,8 +7,8 @@ import { FaLemon } from "react-icons/fa6";
 import { GrUserExpert } from "react-icons/gr";
 import { RiNumber8 } from "react-icons/ri";
 import imageAboutMeOne from "../../assets/images/about/ania_four_lap.jpg";
-import imageAboutMeTwo from "../../assets/images/about/ania_two_lap.jpg";
-import imageAboutMeThree from "../../assets/images/about/ania_five_lap.jpg";
+import imageAboutMeTwo from "../../assets/images/reviews/review_four_desc.png";
+import imageAboutMeThree from "../../assets/images/reviews/review_five_desc.png";
 import ribbon from "../../assets/images/reviews/ribbon.png";
 
 export default function AboutMe() {

@@ -1,4 +1,4 @@
-import css from "../SectionOneQuestion/SectionOneQuestion.module.css"
+import css from "../SectionOneQuestion/SectionOneQuestion.module.css";
 
 export default function SectionOneQuestion() {
     return (
