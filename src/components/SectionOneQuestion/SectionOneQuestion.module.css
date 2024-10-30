@@ -5,6 +5,10 @@
     width: 100%;
     padding: 40px 0px;
     margin: 0 auto;
+    background-image: url('../../assets/images/reviews/elements_vectors_tel.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 136%;
 }
 
 .container {
@@ -53,6 +57,8 @@
     .sectionQue {
         max-width: 768px;
         padding: 60px 0px;
+        background-image: url('../../assets/images/reviews/elements_vectors.png');
+        background-size: 128%;
     }
 
     .container {
@@ -89,10 +95,6 @@
         max-width: 1440px;
         padding: 80px 20px;
         gap: 20px;
-        background-image: url('../../assets/images/reviews/elements_vectors.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 128%;
     }
 
     .container {
