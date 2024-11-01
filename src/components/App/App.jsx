@@ -4,6 +4,7 @@ import Hero from '../Hero/Hero.jsx'
 import AboutMe from '../AboutMe/AboutMe.jsx'
 import SectionOneQuestion from '../SectionOneQuestion/SectionOneQuestion.jsx'
 import ProReels from '../ProReels/ProReels.jsx'
+import Pakiety from '../Pakiety/Pakiety.jsx'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <AboutMe />
       <SectionOneQuestion />
       <ProReels />
+      <Pakiety />
     </div>
   )
 }

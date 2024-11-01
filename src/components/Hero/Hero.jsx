@@ -15,7 +15,7 @@ export default function Hero() {
 
                 <div className={css.divButton}>
                     <a className={css.heroButton} href="#aboutMe">Dowiedz się więcej</a>
-                    <a className={css.heroButton}>Dołącz do kursu</a>
+                    <a className={css.heroButton} href="#pro">Dołącz do kursu</a>
                 </div>
             </div>
             <img className={css.image} src={imagePath} alt="ania" />
