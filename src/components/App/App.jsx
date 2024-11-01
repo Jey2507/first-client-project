@@ -5,6 +5,7 @@ import AboutMe from '../AboutMe/AboutMe.jsx'
 import SectionOneQuestion from '../SectionOneQuestion/SectionOneQuestion.jsx'
 import ProReels from '../ProReels/ProReels.jsx'
 import Pakiety from '../Pakiety/Pakiety.jsx'
+import Insta from '../Insta/Insta.jsx'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <SectionOneQuestion />
       <ProReels />
       <Pakiety />
+      <Insta />
     </div>
   )
 }
