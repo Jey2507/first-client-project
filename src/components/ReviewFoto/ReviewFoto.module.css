@@ -4,6 +4,11 @@
   background-color: #1e1e2d;
 }
 
+.yarl__container {
+  background-color: rgba(0, 0, 0, 0) !important; 
+}
+
+
 .container {
   max-width: 420px;
   width: 100%;

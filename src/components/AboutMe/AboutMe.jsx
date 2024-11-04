@@ -9,7 +9,7 @@ import { RiNumber8 } from "react-icons/ri";
 import imageAboutMeOne from "../../assets/images/about/ania_four_lap.jpg";
 import imageAboutMeTwo from "../../assets/images/reviews/review_four_desc.png";
 import imageAboutMeThree from "../../assets/images/reviews/review_five_desc.png";
-import ribbon from "../../assets/images/reviews/ribbon.png";
+import camera from "../../assets/images/reviews/camera.png";
 
 export default function AboutMe() {
     return (
@@ -20,7 +20,7 @@ export default function AboutMe() {
                     <img className={css.imageMe} src={imagePathAboutMe} alt="Ania" />
                     <div>
                         <div className={css.divContent}>
-                            <img className={css.ribbon} src={ribbon} alt="ribbon" />
+                            <img className={css.ribbon} src={camera} alt="ribbon" />
                             <h3 className={css.textSkils}>W przeszłości stylistka paznokci</h3>
                             <ul className={css.listMe}>
                                 <li>

@@ -1,8 +1,11 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Swiper from "swiper";
 import "swiper/css";
 import clsx from "clsx";
 import css from "../ReviewFoto/ReviewFoto.module.css";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
 import imageOne from "../../assets/images/reviews/review_one.png";
 import imageTwo from "../../assets/images/reviews/review_two.png";
 import imageThree from "../../assets/images/reviews/review_three.png";
@@ -21,11 +24,20 @@ import imageFiveteen from "../../assets/images/reviews/review_fifteen.png";
 import imageSixteen from "../../assets/images/reviews/review_sexteen.png";
 import { icons as sprite } from '../../assets/images/index.js';
 
+const images = [
+  imageOne, imageTwo, imageThree, imageFour, imageFive,
+  imageSix, imageSeven, imageEigth, imageNine, imageTen,
+  imageEleven, imageTwel, imageThird, imageFourteen, imageFiveteen, imageSixteen
+];
+
 const ReviewFoto = () => {
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
   const swiperContainerRef = useRef(null);
-  const swiperRef = useRef(null); 
+  const swiperRef = useRef(null);
+  
+  const [isOpen, setIsOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
 
   useEffect(() => {
     if (prevButtonRef.current && nextButtonRef.current && swiperContainerRef.current && !swiperRef.current) {
@@ -63,42 +75,65 @@ const ReviewFoto = () => {
     };
   }, []);
 
+  const openLightbox = (index) => {
+    setPhotoIndex(index);
+    setIsOpen(true);
+  };
+
   return (
-    <section className={css.section} id="projects">
-      <div className={css.container}>
-        <h2 className={css.sectionsTitle}>Opinii</h2>
-        <div className="swiper swiper-projects" ref={swiperContainerRef}>
-          <ul className={clsx(css.projectsList, "swiper-wrapper")}>
-            {[imageOne, imageTwo, imageThree, imageFour, imageFive, imageSix, imageSeven, imageEigth, imageNine, imageTen, imageEleven, imageTwel, imageThird, imageFourteen, imageFiveteen, imageSixteen].map((image, index) => (
-              <li key={index} className={clsx(css.projectsListItem, "swiper-slide")}>
-                <img className={css.imageItem} src={image} alt={`photo-${index}`} />
-              </li>
-            ))}
-          </ul>
-          <div className={css.buttonsThumb}>
-            <button
-            onClick={() => {swiperRef.current.slidePrev()}}
-              className={clsx(css.swipeBtnProjects, "swiper-button-prev")}
-              type="button"
-              ref={prevButtonRef}>
-              <svg className={clsx(css.btnSvg, css.btnSvgRight)}>
-                <use xlinkHref={`${sprite}#icon-arrow-narrow-right`} />
-              </svg>
-            </button>
-            <button
-              onClick={() => {swiperRef.current.slideNext()}}
-              className={clsx(css.swipeBtnProjects, "swiper-button-next")}
-              type="button"
-              ref={nextButtonRef}>
-              
-              <svg className={css.btnSvg}>
-              <use xlinkHref={`${sprite}#icon-arrow-narrow-right`} />
-              </svg>
-            </button>
+    <>
+      <section className={css.section} id="projects">
+        <div className={css.container}>
+          <h2 className={css.sectionsTitle}>Opinii</h2>
+          <div className="swiper swiper-projects" ref={swiperContainerRef}>
+            <ul className={clsx(css.projectsList, "swiper-wrapper")}>
+              {images.map((image, index) => (
+                <li
+                  key={index}
+                  className={clsx(css.projectsListItem, "swiper-slide")}
+                  onClick={() => openLightbox(index)} 
+                >
+                  <img className={css.imageItem} src={image} alt={`photo-${index}`} />
+                </li>
+              ))}
+            </ul>
+            <div className={css.buttonsThumb}>
+              <button
+                onClick={() => {swiperRef.current.slidePrev()}}
+                className={clsx(css.swipeBtnProjects, "swiper-button-prev")}
+                type="button"
+                ref={prevButtonRef}
+              >
+                <svg className={clsx(css.btnSvg, css.btnSvgRight)}>
+                  <use xlinkHref={`${sprite}#icon-arrow-narrow-right`} />
+                </svg>
+              </button>
+              <button
+                onClick={() => {swiperRef.current.slideNext()}}
+                className={clsx(css.swipeBtnProjects, "swiper-button-next")}
+                type="button"
+                ref={nextButtonRef}
+              >
+                <svg className={css.btnSvg}>
+                  <use xlinkHref={`${sprite}#icon-arrow-narrow-right`} />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {isOpen && (
+        <Lightbox
+          open={isOpen}
+          close={() => setIsOpen(false)}
+          slides={images.map((src) => ({ src }))}
+          index={photoIndex}
+          onIndexChange={setPhotoIndex}
+          className={css.yarl__container}
+        />
+      )}
+    </>
   );
 };
 
