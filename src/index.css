@@ -31,4 +31,10 @@ a {
 
 button {
   cursor: pointer;
+  outline: none; 
+}
+
+button:focus {
+  outline: none; 
+  box-shadow: none; 
 }
