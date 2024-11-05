@@ -1,5 +1,5 @@
 import css from "../AboutMe/AboutMe.module.css"
-import imagePathAboutMe from "../../assets/images/about/ania_three_tel.jpg";
+import imagePathAboutMe from "../../assets/images/about/ania_three-removebg_two.png";
 import { AiTwotoneBulb } from "react-icons/ai";
 import { FaInstagramSquare } from "react-icons/fa";
 import { PiVideoFill } from "react-icons/pi";
