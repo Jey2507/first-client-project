@@ -2,7 +2,7 @@ import css from "../Pakiety/Pakiety.module.css"
 
 export default function Pakiety() {
     return (
-        <section className={css.sectionPak}>
+        <section id="pakiety" className={css.sectionPak}>
             <div className={css.containerPak}>
                 <h2 className={css.textPakiety}>Do wyboru:</h2>
                 <ul className={css.listPak}>

@@ -2,7 +2,7 @@ import css from "../ProReels/ProReels.module.css"
 
 export default function ProReels() {
     return (
-        <section id="pro" className={css.sectionPro}>
+        <section id="proreels" className={css.sectionPro}>
             <div className={css.containerPro}>
                 <h2 className={css.textPro}>ProReels</h2>
                 <div className={css.boxText}>

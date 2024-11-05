@@ -22,7 +22,7 @@
 .mainText {
     margin: 0 auto;
     max-width: 324px;
-    font-family: "Playwrite GB S", cursive;
+    font-family: "Quicksand", sans-serif;
     font-size: 24px;
     font-weight: 600;
     color: rgb(246, 111, 183);
@@ -32,7 +32,7 @@
 }
 
 .textSecond {
-    font-family: "Playwrite GB S", cursive;
+    font-family: "Quicksand", sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: whitesmoke;
@@ -48,7 +48,7 @@
 
 .listQue li p {
     margin: 0;
-    font-family: "Playwrite GB S", cursive;
+    font-family: "Quicksand", sans-serif;
     font-size: 18px;
     color: whitesmoke;
 }

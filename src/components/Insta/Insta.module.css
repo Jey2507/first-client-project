@@ -25,7 +25,7 @@
 .textPro {
     margin: 0 auto;
     width: max-content;
-    font-family: "Playwrite GB S", cursive;
+    font-family: "Quicksand", sans-serif;
     font-size: 30px;
     font-weight: 600;
     color: #734af8;
@@ -33,7 +33,7 @@
 }
 
 .descrPro {
-    font-family: "Playwrite GB S", cursive;
+    font-family: "Quicksand", sans-serif;
     font-size: 18px;
     font-weight: 800;
     margin: 0px 0px 16px 0px;

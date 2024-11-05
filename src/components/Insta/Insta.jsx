@@ -2,7 +2,7 @@ import css from "../Insta/Insta.module.css"
 
 export default function Insta() {
     return (
-        <section id="pro" className={css.sectionPro}>
+        <section id="insta" className={css.sectionPro}>
             <div className={css.containerPro}>
                 <h2 className={css.textPro}>InstaPaznokcie</h2>
                 <div className={css.boxText}>

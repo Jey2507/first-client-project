@@ -7,7 +7,7 @@
 .mainText {
     margin: 0 auto;
     width: max-content;
-    font-family: "Playwrite GB S", cursive;
+    font-family: "Quicksand", sans-serif;
     font-size: 30px;
     font-weight: 600;
     color: #c64c8d;
@@ -40,16 +40,16 @@
 }
 
 .textSkils {
-    font-family: "Playwrite GB S", cursive;
+    font-family: "Quicksand", sans-serif;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 700;
     width: 290px;
     margin: 0 auto 12px auto;
     text-align: center;
 }
 
 .descrAbout {
-    font-family: "Playwrite GB S", cursive;
+    font-family: "Quicksand", sans-serif;
     font-size: 16px;
     font-weight: 400;
     margin: 0;
@@ -76,7 +76,7 @@
 
 .textAchi {
     text-align: center;
-    font-family: "Playwrite GB S", cursive;
+    font-family: "Quicksand", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 24px;
@@ -86,7 +86,7 @@
 
 .descrAchi {
     width: 100%;
-    font-family: "Playwrite GB S", cursive;
+    font-family: "Quicksand", sans-serif;
     font-size: 14px;
     font-weight: 600;
     height: auto;
@@ -148,7 +148,7 @@
     }
 
     .textSkils {
-        font-size: 22px;
+        font-size: 26px;
         width: 100%;
         margin: 0 auto 8px auto;
     }
