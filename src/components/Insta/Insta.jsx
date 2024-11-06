@@ -1,4 +1,5 @@
-import css from "../Insta/Insta.module.css"
+import css from "../Insta/Insta.module.css";
+import gift from "../../assets/images/reviews/gift-box.png";
 
 export default function Insta() {
     return (
@@ -32,9 +33,13 @@ export default function Insta() {
                         </li>
                     </ul>
 
-                    <p className={css.descrCzas}>
-                    Bonus: linki i instrukcje, jak zrobić makiety na Instagramie.
-                    </p>
+                    <div className={css.boxGift}>
+                        <img className={css.gift} src={gift} alt="gift" />
+                        <p className={css.descrCzas}>
+                            Bonus: linki i instrukcje, jak zrobić makiety na Instagramie.
+                        </p>
+                    </div>
+                    
                 </div>
             </div>
         </section>

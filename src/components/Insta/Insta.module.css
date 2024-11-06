@@ -22,6 +22,17 @@
     margin: 0 auto 28px auto;
 }
 
+.gift {
+    width: 36px;
+    height: 36px;
+}
+
+.boxGift {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
 .textPro {
     margin: 0 auto;
     width: max-content;
@@ -63,7 +74,7 @@
 
 .descrCzas {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 700;
     margin: 0;
     color: rgba(245, 245, 245, 0.921);
     text-shadow: 0 0 10px rgba(228, 95, 245, 0.9), 0 0 20px rgba(228, 95, 245, 0.8);
