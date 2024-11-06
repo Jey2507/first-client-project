@@ -8,7 +8,7 @@
     font-weight: bold; 
     color: #ffffff; 
     text-shadow: 2px 2px 4px #e59af880;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -47,7 +47,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
-    padding: 80px 15px 68px 15px;
+    padding: 120px 15px 100px 15px;
 }
 
 .divButton {
