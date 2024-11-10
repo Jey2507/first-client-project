@@ -10,7 +10,7 @@ export default function Pakiety() {
                 <ul className={css.listPak}>
                     <li>
                         <div>
-                            <p>- dostęp do 5 tygodni</p>
+                            <p>- dostęp do 5 moduły</p>
                             <p>- dostęp do czatu grupowego</p>
                         </div>
                         <a className={css.linkPakBronze}>Pakiet1: Tylko oglądać</a>
@@ -21,13 +21,13 @@ export default function Pakiety() {
                     </li>
                     <li>
                         <div>
-                            <p>- dostęp do 5 tygodni</p>
+                            <p>- dostęp do 5 moduły</p>
                             <p>- dostęp czatu grupowego</p>
-                            <p>- 4 zoom</p>
+                            <p>- zoom</p>
                             <p>- sprawdzanie pracy domowej i odwrotna info.</p>
                             <div className={clsx(css.boxGift, css.megaBoxSilver)}>
                             <img className={css.gift} src={gift} alt="gift" />
-                                <p className={css.bonus}>- dostęp do bonusu 6 tygodnia</p>
+                                <p className={css.bonus}>- dostęp do bonusu 6 moduły</p>
                             </div>
                         </div>
                         <a className={css.linkPakSilver}>Pakiet2: Standart</a>
@@ -38,14 +38,14 @@ export default function Pakiety() {
                     </li>
                     <li>
                         <div>
-                            <p>- dostęp do 5 tygodni</p>
+                            <p>- dostęp do 5 moduły</p>
                             <p>- osobny czat </p>
-                            <p>- 4 osobne zoom</p>
+                            <p>- osobne zoom</p>
                             <p>- osobna analiza </p>
                             <div className={css.megaBox}>
                                 <div className={css.boxGift}>
                                     <img className={css.gift} src={gift} alt="gift" />
-                                    <p className={css.bonus}>- dostęp do bonusu 6 tygodnia</p>
+                                    <p className={css.bonus}>- dostęp do bonusu 6 moduły</p>
                                 </div> 
                                 <div className={css.boxGift}>
                                     <img className={css.gift} src={gift} alt="gift" />

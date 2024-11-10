@@ -29,17 +29,22 @@ export default function Insta() {
                             <p>Kurs dla stylistek paznokci, które chcą zainspirować się i nauczyć się robić wyjątkowe zdjęcia swoich prac, przyciągając tym samym więcej klientów.</p>
                         </li>
                         <li>
-                            <p>Łącznie kurs trwa ok. 1,5 godziny. Jest dostępny w zapisie i zapewnia dostęp bez ograniczeń. Dodatkowo autorskie filtry do zdjęć paznokci są dostępne GRATIS.</p>
+                            <p>Łącznie kurs trwa ok. 1,5 godziny. Jest dostępny w zapisie i zapewnia dostęp bez ograniczeń.</p>
                         </li>
                     </ul>
 
-                    <div className={css.boxGift}>
-                        <img className={css.gift} src={gift} alt="gift" />
-                        <p className={css.descrCzas}>
-                            Bonus: linki i instrukcje, jak zrobić makiety na Instagramie.
-                        </p>
-                    </div>
-                    
+                    <div className={css.containerGap}>
+                        <div className={css.boxGift}>
+                            <img className={css.gift} src={gift} alt="gift" />
+                            <p className={css.descrCzas}>
+                                Bonus: linki i instrukcje, jak zrobić makiety na Instagramie.
+                            </p>
+                        </div>
+                        <div className={css.boxGift}>
+                            <img className={css.gift} src={gift} alt="gift" />
+                            <p className={css.descrCzas}>Dodatkowo autorskie filtry do zdjęć paznokci są dostępne GRATIS.</p>           
+                        </div>   
+                    </div>      
                 </div>
             </div>
         </section>

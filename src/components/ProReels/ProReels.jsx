@@ -31,13 +31,12 @@ export default function ProReels() {
                     </ul>
                     <p className={css.descrCzas}>
                         Niedługo Start.<br />
-                        Czas trwania 6 tygodni.<br />
-                        Dostęp 6 miesiąca po zakończeniu.
+                        Dostęp 6 miesiąca.
                     </p>
                 </div>
                 <ul className={css.listPro}>
                     <li className={css.itemPro}>
-                        <h3>1 tydzień: Moduł</h3>
+                        <h3>1 Moduł</h3>
                         <ul>
                             <li>
                                 <p>- Oświetlenie </p>
@@ -54,7 +53,7 @@ export default function ProReels() {
                         </ul>
                     </li>
                     <li className={css.itemPro}>
-                        <h3>2 tydzień: Moduł</h3>
+                        <h3>2 Moduł</h3>
                         <ul>
                             <li>
                                 <p>- Gdzie szukać pomysły?</p>
@@ -71,7 +70,7 @@ export default function ProReels() {
                         </ul>
                     </li>
                     <li className={css.itemPro}>
-                        <h3>3-4 tydzień: Moduł</h3>
+                        <h3>3-4 Moduł</h3>
                         <ul>
                             <li>
                                 <p>- Jak nagrywać MK część praktyczna</p>
@@ -88,7 +87,7 @@ export default function ProReels() {
                         </ul>
                     </li>
                     <li className={css.itemPro}>
-                        <h3>5 tydzień: Moduł</h3>
+                        <h3>5 Moduł</h3>
                         <ul>
                             <li>
                                 <p>- Nagranie siebie praktyka</p>

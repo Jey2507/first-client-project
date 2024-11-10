@@ -59,6 +59,12 @@
     margin: 0;
 }
 
+.containerGap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .descList {
     margin-bottom: 12px;
     display: flex;
