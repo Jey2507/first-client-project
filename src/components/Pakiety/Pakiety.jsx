@@ -78,9 +78,9 @@ export default function Pakiety() {
                 <p className={css.priceSmall}>420 PLN</p>
                 <p className={clsx(css.descrBuy, css.bronze)}>{text[language].price}: <span className={css.spanBuy}>380 PLN</span></p>
             </span>
-            <button onClick={() => handleBuy('prod_RCoRLOQIBek0Ih')} className={css.button3D}>
+            <a href="https://buy.stripe.com/test_14kdSAgW61RSgMM3cc" target="_blank" className={css.button3D}>
                 {text[language].buy}
-            </button>
+            </a>
             </div>
           </li>
           <li>
