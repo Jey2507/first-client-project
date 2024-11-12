@@ -5,7 +5,7 @@ import { useLanguage } from "../../js/LanguageProvider.jsx"; // Імпортує
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios"; // Імпортуємо axios
 
-const stripePromise = loadStripe('pk_test_51QKOCeFhNgTlpvpSgTdtn7m3jgLh0vi0n1ZrZgl9rNj8J6MixNoihPG69blNRVkCCXsvLCeETwT2dgJCSgf2Utje00SvBxPKCD');
+const stripePromise = loadStripe('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');
 
 export default function Pakiety() {
   const { language } = useLanguage();
