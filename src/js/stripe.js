@@ -2,7 +2,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios"; // Імпорт axios
 
 // Публічний ключ Stripe
-const stripePromise = loadStripe('pk_test_51QKOCeFhNgTlpvpSgTdtn7m3jgLh0vi0n1ZrZgl9rNj8J6MixNoihPG69blNRVkCCXsvLCeETwT2dgJCSgf2Utje00SvBxPKCD'); // Замініть на ваш реальний публічний ключ
+const stripePromise = loadStripe('pk_live_51QKOCeFhNgTlpvpSHo1hkgln2LH8EIPPEru1PLetMl6rUH1lpFhfQm0KfPE5xFvZMG3XcboZOJaRLuC1Qmivtgn400GhwfmWsa'); // Замініть на ваш реальний публічний ключ
 
 export const handleCheckout = async (priceId) => {
   const stripe = await stripePromise;

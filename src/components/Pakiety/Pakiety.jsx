@@ -46,8 +46,9 @@ export default function Pakiety() {
 
   const handleBuy = async (priceId) => {
     const stripe = await stripePromise;
+    console.log(stripe,"dkfjdkfjdkfjdfj")
     try {
-      const response = await axios.post('http://localhost:3003/create-checkout-session', {
+      const response = await axios.post('https://backend-client-50dq.onrender.com/create-checkout-session', {
         priceId
       }, {
         headers: {
