@@ -100,7 +100,7 @@ export default function Pakiety() {
                 <p className={css.priceSmall}>690 PLN</p>
                 <p className={clsx(css.descrBuy, css.silver)}>{text[language].price}: <span className={css.spanBuy}>590 PLN</span></p>
             </span>
-            <button onClick={() => handleBuy('price_1HhU2YH8DS82G5e9lUwF9zH7')} className={css.button3D}>
+            <button onClick={() => handleBuy('prod_RCoUDI77sjgHRM')} className={css.button3D}>
                 {text[language].buy}
             </button>
             </div>
@@ -128,7 +128,7 @@ export default function Pakiety() {
                 <p className={css.priceSmall}>1500 PLN</p>
                 <p className={clsx(css.descrBuy, css.gold)}>{text[language].price}: <span className={css.spanBuy}>1350 PLN</span></p>
             </span>
-            <button onClick={() => handleBuy('price_1HhU2YH8DS82G5e9lUwF9zH7')} className={css.button3D}>
+            <button onClick={() => handleBuy('prod_RCoVIfVMEGPN19')} className={css.button3D}>
                 {text[language].buy}
             </button>
             </div>
