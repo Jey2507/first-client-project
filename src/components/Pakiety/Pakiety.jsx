@@ -45,7 +45,7 @@ export default function Pakiety() {
 
   const handleBuy = async (priceId) => {
     const stripe = await stripePromise;
-    const response = await fetch('https://your-backend-url.com/create-checkout-session', {
+    const response = await fetch('https://backend-client-50dq.onrender.com//create-checkout-session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
