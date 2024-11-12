@@ -1,52 +1,109 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import css from "../Insta/Insta.module.css";
 import gift from "../../assets/images/reviews/gift-box.png";
+import { useLanguage } from "../../js/LanguageProvider.jsx"; // Імпортуємо хук для мови
 
 export default function Insta() {
-    return (
-        <section id="insta" className={css.sectionPro}>
-            <div className={css.containerPro}>
-                <h2 className={css.textPro}>InstaPaznokcie</h2>
-                <div className={css.boxText}>
-                    <h3 className={css.descrPro}>
-                        Co znajdziesz na kursie:
-                    </h3>
-                    <ul className={css.descList}>
-                        <li>
-                            <p>- Podstawy fotografii. <br />
-                            - Ustawienia kamery. <br />
-                            - Jakie urządzenie wybrać. <br />
-                            - Jak prawidłowo ustawiać światło. <br />
-                            - Praktyka na sobie. <br />
-                            - Praktyka na modelce. <br />
-                            - Akcesoria i tło. <br />
-                            - Obróbka zdjęć w aplikacji praktyka. <br />
-                            </p>
-                        </li>
-                        <li>
-                            <p>Kurs podstawowy z robienia zdjęć paznokci, na którym dowiesz się o podstawach fotografii. Dzięki niemu na pewno będziesz mogła zmienić podejście do zdjęć swoich prac.</p>
-                        </li>
-                        <li>
-                            <p>Kurs dla stylistek paznokci, które chcą zainspirować się i nauczyć się robić wyjątkowe zdjęcia swoich prac, przyciągając tym samym więcej klientów.</p>
-                        </li>
-                        <li>
-                            <p>Łącznie kurs trwa ok. 1,5 godziny. Jest dostępny w zapisie i zapewnia dostęp bez ograniczeń.</p>
-                        </li>
-                    </ul>
+  const { language } = useLanguage(); // Використовуємо хук для отримання поточної мови
+  const [courses, setCourses] = useState([]); // Створюємо стан для курсів
 
-                    <div className={css.containerGap}>
-                        <div className={css.boxGift}>
-                            <img className={css.gift} src={gift} alt="gift" />
-                            <p className={css.descrCzas}>
-                                Bonus: linki i instrukcje, jak zrobić makiety na Instagramie.
-                            </p>
-                        </div>
-                        <div className={css.boxGift}>
-                            <img className={css.gift} src={gift} alt="gift" />
-                            <p className={css.descrCzas}>Dodatkowo autorskie filtry do zdjęć paznokci są dostępne GRATIS.</p>           
-                        </div>   
-                    </div>      
+  // Тексти для двох мов
+  const text = {
+    pl: {
+      title: "Kursy",
+      noCourses: "Brak dostępnych kursów"
+    },
+    en: {
+      title: "Courses",
+      noCourses: "No available courses"
+    }
+  };
+
+  // Використовуємо useEffect для завантаження курсів при монтуванні компонента
+  useEffect(() => {
+    // Функція для отримання курсів
+    const fetchCourses = async () => {
+      try {
+        const response = await axios.get('https://backend-client-50dq.onrender.com/kurs/info');
+        setCourses(response.data); // Зберігаємо отримані курси в стан
+      } catch (error) {
+        console.error('Помилка при завантаженні курсів:', error);
+      }
+    };
+
+    fetchCourses(); 
+  }, []);
+
+  const splitDescription = (description) => {
+    if (description.includes('&')) {
+      return description.split('&').map((item, index) => (
+        <p key={index} className={css.courseDescription}>- {item}</p> 
+      ));
+    }
+    return <p className={css.courseDescription}>- {description}</p> ;
+  };
+
+  const splitText = (text) => {
+    if (text.includes('&')) {
+      return text.split('&').map((item, index) => (
+        <p key={index} className={css.learn}>{item}</p> 
+      ));
+    }
+    return <p className={css.learn}>{text}</p> ;
+  };
+
+  const splitBonus = (text) => {
+    if (text.includes('&')) {
+      return text.split('&').map((item, index) => (
+        <div key={index} className={css.boxGift}>
+            <img className={css.gift} src={gift} alt="gift" />
+            <p className={css.ppp}>{item}</p> 
+        </div>
+      ));
+    }
+    return (<div className={css.boxGift}>
+                <img className={css.gift} src={gift} alt="gift" />
+                <p className={css.ppp}>{text}</p> 
+            </div>)
+  };
+
+  return (
+    <section id="kursy" className={css.sectionPro}>
+      <div className={css.containerPro}>
+        <h2 className={css.textPro}>{text[language].title}</h2>
+          {courses.length > 0 ? (
+            courses.map((course) => (
+            <div key={course.course_id} className={css.boxText}>
+              <div  className={css.courseItem}>
+                <h3 className={css.descrPro}>{course.title}</h3>
+                
+                <div className={css.columnText}>
+                  {splitDescription(course.description)}
                 </div>
+
+                <div>
+                  {splitText(course.learn)}
+                </div>
+
+                <div className={css.descrCzas}>
+                    {splitBonus(course.bonuses)} 
+                </div>
+
+              </div>
+              <div className={css.divBuy}>
+                <span>
+                    <p className={css.priceSmall}>{course.priceSmall} PLN</p>
+                    <p className={css.descrBuy}>{course.price}<span className={css.spanBuy}> PLN</span></p>
+                </span>
+                <button className={css.button3D}>Buy</button>
             </div>
-        </section>
-    )
+            </div>
+            ))
+          ) : (
+            <p className={css.noCourses}>{text[language].noCourses}</p>
+          )}
+      </div>
+    </section>
+  );
 }

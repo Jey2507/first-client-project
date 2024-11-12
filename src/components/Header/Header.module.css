@@ -14,6 +14,28 @@
     opacity: 0;
 }
 
+.languageSwitch {
+    background-color: transparent;
+    border: none;
+    width: 48px;
+    height: 100%;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fdd4d4;
+    text-transform: uppercase;
+    border: 2px solid #fdd4d4;
+    border-radius: 12px;
+}
+
+
+.listButton {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .insta {
     width: 40px;
 }

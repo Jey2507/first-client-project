@@ -1,66 +1,103 @@
 import css from "../Pakiety/Pakiety.module.css";
 import gift from "../../assets/images/reviews/gift-box.png";
 import clsx from "clsx";
+import { useLanguage } from "../../js/LanguageProvider.jsx"; // Імпортуємо хук для мови
 
 export default function Pakiety() {
-    return (
-        <section id="pakiety" className={css.sectionPak}>
-            <div className={css.containerPak}>
-                <h2 className={css.textPakiety}>Do wyboru:</h2>
-                <ul className={css.listPak}>
-                    <li>
-                        <div>
-                            <p>- dostęp do 5 moduły</p>
-                            <p>- dostęp do czatu grupowego</p>
-                        </div>
-                        <a className={css.linkPakBronze}>Pakiet1: Tylko oglądać</a>
-                        <div className={css.divBuy}>
-                            <p className={clsx(css.descrBuy, css.bronze)}>Cena: <span className={css.spanBuy}>9999 PLN</span></p>
-                            <button className={css.button3D}>Kupić</button>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <p>- dostęp do 5 moduły</p>
-                            <p>- dostęp czatu grupowego</p>
-                            <p>- zoom</p>
-                            <p>- sprawdzanie pracy domowej i odwrotna info.</p>
-                            <div className={clsx(css.boxGift, css.megaBoxSilver)}>
-                            <img className={css.gift} src={gift} alt="gift" />
-                                <p className={css.bonus}>- dostęp do bonusu 6 moduły</p>
-                            </div>
-                        </div>
-                        <a className={css.linkPakSilver}>Pakiet2: Standart</a>
-                        <div className={css.divBuy}>
-                            <p className={clsx(css.descrBuy, css.silver)}>Cena: <span className={css.spanBuy}>9999 PLN</span></p>
-                            <button className={css.button3D}>Kupić</button>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <p>- dostęp do 5 moduły</p>
-                            <p>- osobny czat </p>
-                            <p>- osobne zoom</p>
-                            <p>- osobna analiza </p>
-                            <div className={css.megaBox}>
-                                <div className={css.boxGift}>
-                                    <img className={css.gift} src={gift} alt="gift" />
-                                    <p className={css.bonus}>- dostęp do bonusu 6 moduły</p>
-                                </div> 
-                                <div className={css.boxGift}>
-                                    <img className={css.gift} src={gift} alt="gift" />
-                                    <p className={css.bonus}>- bonus online kurs „InstaPaznokcie”</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a className={css.linkPakGold}>Pakiet Vip:</a>
-                        <div className={css.divBuy}>
-                            <p className={clsx(css.descrBuy, css.gold)}>Cena: <span className={css.spanBuy}>9999 PLN</span></p>
-                            <button className={css.button3D}>Kupić</button>
-                        </div>
-                    </li>
-                </ul>
+  const { language } = useLanguage(); // Використовуємо хук для отримання поточної мови
+
+  // Тексти для двох мов
+  const text = {
+    pl: {
+      title: "Do wyboru:",
+      package1: "Pakiet1: Tylko oglądać",
+      package2: "Pakiet2: Standart",
+      package3: "Pakiet Vip:",
+      price: "Cena",
+      buy: "Kupić",
+      access: "dostęp do 5 moduły",
+      groupChat: "dostęp do czatu grupowego",
+      zoom: "zoom",
+      homework: "sprawdzanie pracy domowej i odwrotna info.",
+      bonus: "dostęp do bonusu 6 moduły",
+      vipBonus: "bonus online kurs „InstaPaznokcie”",
+      noAccess: "Brak dostępu do kursów",
+    },
+    en: {
+      title: "Choose from:",
+      package1: "Package 1: View Only",
+      package2: "Package 2: Standard",
+      package3: "VIP Package:",
+      price: "Price",
+      buy: "Buy",
+      access: "access to 5 modules",
+      groupChat: "access to group chat",
+      zoom: "zoom",
+      homework: "homework checking and feedback.",
+      bonus: "access to bonus 6 modules",
+      vipBonus: "bonus online course 'InstaPaznokcie'",
+      noAccess: "No available packages",
+    }
+  };
+
+  return (
+    <section id="pakiety" className={css.sectionPak}>
+      <div className={css.containerPak}>
+        <h2 className={css.textPakiety}>{text[language].title}</h2>
+        <ul className={css.listPak}>
+          <li>
+            <div>
+              <p>- {text[language].access}</p>
+              <p>- {text[language].groupChat}</p>
             </div>
-        </section>
-    )
+            <a className={css.linkPakBronze}>{text[language].package1}</a>
+            <div className={css.divBuy}>
+              <p className={clsx(css.descrBuy, css.bronze)}>{text[language].price}: <span className={css.spanBuy}>9999 PLN</span></p>
+              <button className={css.button3D}>{text[language].buy}</button>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p>- {text[language].access}</p>
+              <p>- {text[language].groupChat}</p>
+              <p>- {text[language].zoom}</p>
+              <p>- {text[language].homework}</p>
+              <div className={clsx(css.boxGift, css.megaBoxSilver)}>
+                <img className={css.gift} src={gift} alt="gift" />
+                <p className={css.bonus}>- {text[language].bonus}</p>
+              </div>
+            </div>
+            <a className={css.linkPakSilver}>{text[language].package2}</a>
+            <div className={css.divBuy}>
+              <p className={clsx(css.descrBuy, css.silver)}>{text[language].price}: <span className={css.spanBuy}>9999 PLN</span></p>
+              <button className={css.button3D}>{text[language].buy}</button>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p>- {text[language].access}</p>
+              <p>- osobny czat</p>
+              <p>- osobne zoom</p>
+              <p>- osobna analiza</p>
+              <div className={css.megaBox}>
+                <div className={css.boxGift}>
+                  <img className={css.gift} src={gift} alt="gift" />
+                  <p className={css.bonus}>- {text[language].bonus}</p>
+                </div> 
+                <div className={css.boxGift}>
+                  <img className={css.gift} src={gift} alt="gift" />
+                  <p className={css.bonus}>- {text[language].vipBonus}</p>
+                </div>
+              </div>
+            </div>
+            <a className={css.linkPakGold}>{text[language].package3}</a>
+            <div className={css.divBuy}>
+              <p className={clsx(css.descrBuy, css.gold)}>{text[language].price}: <span className={css.spanBuy}>9999 PLN</span></p>
+              <button className={css.button3D}>{text[language].buy}</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  );
 }

@@ -1,4 +1,3 @@
-// ReviewFoto.js
 import { useRef, useEffect, useState } from "react";
 import Swiper from "swiper";
 import "swiper/css";
@@ -25,6 +24,7 @@ import imageFourteen from "../../assets/images/reviews/review_fourteen.png";
 import imageFiveteen from "../../assets/images/reviews/review_fifteen.png";
 import imageSixteen from "../../assets/images/reviews/review_sexteen.png";
 import { icons as sprite } from '../../assets/images/index.js';
+import { useLanguage } from "../../js/LanguageProvider.jsx"; // Імпортуємо хук для мови
 
 const localImages = [
   imageOne, imageTwo, imageThree, imageFour, imageFive,
@@ -33,14 +33,27 @@ const localImages = [
 ];
 
 const ReviewFoto = () => {
+  const { language } = useLanguage(); // Отримуємо поточну мову
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
   const swiperContainerRef = useRef(null);
   const swiperRef = useRef(null);
-  
+
   const [images, setImages] = useState(localImages); // Ініціалізуємо стан локальними фото
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
+
+  // Тексти для польської та англійської мов
+  const text = {
+    pl: {
+      title: "Opinii",
+      clickToOpen: "Kliknij, щоб відкрити",
+    },
+    en: {
+      title: "Reviews",
+      clickToOpen: "Click to open",
+    }
+  };
 
   useEffect(() => {
     // Функція для запиту фото з бекенду
@@ -98,7 +111,7 @@ const ReviewFoto = () => {
     <>
       <section className={css.section} id="projects">
         <div className={css.container}>
-          <h2 className={css.sectionsTitle}>Opinii</h2>
+          <h2 className={css.sectionsTitle}>{text[language].title}</h2>
           <div className="swiper swiper-projects" ref={swiperContainerRef}>
             <ul className={clsx(css.projectsList, "swiper-wrapper")}>
               {images.map((image, index) => (

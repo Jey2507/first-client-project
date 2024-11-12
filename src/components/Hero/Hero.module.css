@@ -4,11 +4,11 @@
     font-size: 24px;
     font-style: normal;
     width: 240px;
+    height: 280px;
     line-height: 1.5;
     font-weight: bold; 
     color: #ffffff; 
     text-shadow: 2px 2px 4px #e59af880;
-    margin-bottom: 100px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -119,6 +119,8 @@
     .heroDescr {
         font-size: 20px;
         width: 320px;
+        height: 196px;
+        margin: 0;
     }
 
     .heroButton {
@@ -164,6 +166,7 @@
         font-weight: 900;
         font-size: 44px;
         margin-bottom: 20px;
+        height: max-content;
     }
 
     .heroDescr {
@@ -171,6 +174,7 @@
         text-align: start;
         margin: 0px 0px 40px 0px;
         width: 800px;
+        height: max-content;
     }
 
     .divButton {

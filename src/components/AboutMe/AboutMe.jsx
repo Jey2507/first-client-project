@@ -10,81 +10,105 @@ import imageAboutMeOne from "../../assets/images/about/ania_four_lap.jpg";
 import imageAboutMeTwo from "../../assets/images/about/ania_two_desc.jpg";
 import imageAboutMeThree from "../../assets/images/about/ania_five_lap.jpg";
 import camera from "../../assets/images/reviews/camera.png";
+import { useLanguage } from "../../js/LanguageProvider.jsx"; // Імпортуємо хук
 
 export default function AboutMe() {
+    const { language } = useLanguage(); // Використовуємо хук для отримання поточної мови
+
+    // Тексти для двох мов
+    const text = {
+        pl: {
+            title: "O mnie",
+            subtitle: "W przeszłości stylistka paznokci",
+            bulletPoints: [
+                "#za rok do mnie przyszło 35 tysięcy obserwujących dzięki REELS, bez żadnej reklamy",
+                "#ucze stylistki robić zajebiste zdjęcia od podstaw",
+                "#ucze robić rolki które przynoszą rezultaty, dzięki którym zrasta dochód"
+            ],
+            courseTitle: "Online kurs „InstaPaznokcie” przeszło 200+ stylistek",
+            courseDetails: "#znam jak prowadzić instagram ze by zarabiać",
+            achievementsTitle: "Moje osiągnięcia i wiedza specjalistyczna",
+            achievements: [
+                { icon: RiNumber8, description: "8 lat w beauty branże" },
+                { icon: PiVideoFill, description: "Autorka online szkolenia ProReels" },
+                { icon: FaInstagramSquare, description: "Autorka online kursu InstaPaznokcie" },
+                { icon: AiTwotoneBulb, description: "Tworcza" },
+                { icon: FaLemon, description: "Reels na kilka🍋 wyświetleń" },
+                { icon: GrUserExpert, description: "Ekspert z tworzenia contentu" }
+            ]
+        },
+        en: {
+            title: "About Me",
+            subtitle: "In the past, a nail stylist",
+            bulletPoints: [
+                "#In a year, 35 thousand followers came to me thanks to REELS, without any ads",
+                "#I teach stylists to take amazing photos from scratch",
+                "#I teach how to create reels that bring results, increasing income"
+            ],
+            courseTitle: "Online course 'InstaNails' with over 200+ stylists",
+            courseDetails: "#I know how to run Instagram to make money",
+            achievementsTitle: "My Achievements and Expertise",
+            achievements: [
+                { icon: RiNumber8, description: "8 years in the beauty industry" },
+                { icon: PiVideoFill, description: "Creator of the online training ProReels" },
+                { icon: FaInstagramSquare, description: "Creator of the online course InstaNails" },
+                { icon: AiTwotoneBulb, description: "Creative" },
+                { icon: FaLemon, description: "Reels with millions🍋 views" },
+                { icon: GrUserExpert, description: "Expert in content creation" }
+            ]
+        }
+    };
+
     return (
         <section id="aboutMe" className={css.sectionAbout}>
-            <h2 className={css.mainText}>O mnie</h2>
+            <h2 className={css.mainText}>{text[language].title}</h2>
 
-                <div className={css.divContainer}>
-                    <img className={css.imageMe} src={imagePathAboutMe} alt="Ania" />
-                    <div>
-                        <div className={css.divContent}>
-                            <img className={css.ribbon} src={camera} alt="ribbon" />
-                            <h3 className={css.textSkils}>W przeszłości stylistka paznokci</h3>
-                            <ul className={css.listMe}>
-                                <li>
-                                    <p className={css.descrAbout}><span className={css.span}>#za rok</span> do mnie przyszło 35 tysięcy obserwujących dzięki REELS, bez żadnej reklamy</p>
+            <div className={css.divContainer}>
+                <img className={css.imageMe} src={imagePathAboutMe} alt="Ania" />
+                <div>
+                    <div className={css.divContent}>
+                        <img className={css.ribbon} src={camera} alt="ribbon" />
+                        <h3 className={css.textSkils}>{text[language].subtitle}</h3>
+                        <ul className={css.listMe}>
+                            {text[language].bulletPoints.map((point, index) => (
+                                <li key={index}>
+                                    <p className={css.descrAbout}><span className={css.span}>{point.split(" ")[0]}</span> {point.slice(2)}</p>
                                 </li>
-                                <li>
-                                    <p className={css.descrAbout}><span className={css.span}>#ucze</span> stylistek robić zajebiste zdjęcia od podstaw</p>
-                                </li>
-                                <li>
-                                    <p className={css.descrAbout}><span className={css.span}>#ucze</span> robić rolki które przynoszą rezultaty, dzięki którym zrasta dochód</p>
-                                </li>
-                            </ul>
-                            <h3 className={css.textSkils}>Online kurs „InstaPaznokcie” przeszło 200+ stylistek</h3>
-                            <ul>
-                                <li>
-                                    <p className={css.descrAbout}><span className={css.span}>#znam</span> jak prowadzić instagram ze by zarabiać</p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className={css.divImages}>
-                            <div className={css.imageReviewContainer}>
-                                <img className={css.imageReview} src={imageAboutMeTwo} alt="aniaTwo" />
-                            </div>
-                            <div className={css.imageReviewContainer}>
-                                <img className={css.imageReview} src={imageAboutMeThree} alt="aniaThree" />
-                            </div> 
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <div className={css.divAchi}>
-                    <h2 className={css.textAchi}>Moje osiągnięcia i wiedza specjalistyczna</h2>
-                    <div className={css.divSkills}>
-                        <ul className={css.listAchi}>
-                            <li className={css.itemAchi}>
-                                <RiNumber8 size="40px" color="#A8539D" className={css.icon}/>
-                                <p className={css.descrAchi}>- 8 lat w beauty branże</p>
-                            </li>
-                            <li className={css.itemAchi}>
-                                <PiVideoFill size="40px" color="#BD7FB0" className={css.icon}/>
-                                <p className={css.descrAchi}>- Autorka online szkolenia ProReels</p>
-                            </li>
-                            <li className={css.itemAchi}>
-                                <FaInstagramSquare size="40px" color="#A56A9A" className={css.icon}/>
-                                <p className={css.descrAchi}>- Autorka online kursu InstaPaznokcie</p>
-                            </li>
-                            <li className={css.itemAchi}>
-                                <AiTwotoneBulb size="40px" color="#8B5A83" className={css.icon}/>
-                                <p className={css.descrAchi}>- Tworcza</p>
-                            </li>
-                            
-                            <li className={css.itemAchi}>
-                                <FaLemon size="40px" color="#D492C8" className={css.icon}/>
-                                <p className={css.descrAchi}>- Reels na kilka🍋 wyświetleń</p>
-                            </li>
-                            <li className={css.itemAchi}>
-                                <GrUserExpert size="40px" color="#C773B5" className={css.icon}/>
-                                <p className={css.descrAchi}>- Ekspert z tworzenia contentu</p>
+                            ))}
+                        </ul>
+                        <h3 className={css.textSkils}>{text[language].courseTitle}</h3>
+                        <ul>
+                            <li>
+                                <p className={css.descrAbout}><span className={css.span}>{text[language].courseDetails.split(" ")[0]}</span> {text[language].courseDetails.slice(1)}</p>
                             </li>
                         </ul>
-                        <img className={css.imageSkills} src={imageAboutMeOne} alt="fotoAnia" />
+                    </div>
+                    <div className={css.divImages}>
+                        <div className={css.imageReviewContainer}>
+                            <img className={css.imageReview} src={imageAboutMeTwo} alt="aniaTwo" />
+                        </div>
+                        <div className={css.imageReviewContainer}>
+                            <img className={css.imageReview} src={imageAboutMeThree} alt="aniaThree" />
+                        </div>
                     </div>
                 </div>
+
+            </div>
+
+            <div className={css.divAchi}>
+                <h2 className={css.textAchi}>{text[language].achievementsTitle}</h2>
+                <div className={css.divSkills}>
+                    <ul className={css.listAchi}>
+                        {text[language].achievements.map((item, index) => (
+                            <li key={index} className={css.itemAchi}>
+                                <item.icon size="40px" color="#A8539D" className={css.icon} />
+                                <p className={css.descrAchi}>- {item.description}</p>
+                            </li>
+                        ))}
+                    </ul>
+                    <img className={css.imageSkills} src={imageAboutMeOne} alt="fotoAnia" />
+                </div>
+            </div>
         </section>
-    )
+    );
 }

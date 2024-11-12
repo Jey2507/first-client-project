@@ -43,6 +43,29 @@
     margin-bottom: 24px;
 }
 
+.divBuy {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.priceSmall {
+    font-size: 22px;
+    margin: 0;
+    color: red;
+    font-weight: 600;
+    text-decoration: line-through;
+    margin-top: 12px;
+}
+
+.descrBuy {
+    font-size: 30px !important;
+    font-weight: 800 !important;
+    color: rgb(222, 210, 210) !important;
+    border-radius: 12px;
+    margin: 0;
+} 
+
 .descrPro {
     font-family: "Quicksand", sans-serif;
     font-size: 18px;
@@ -52,17 +75,29 @@
     text-transform: uppercase;
 }
 
-.descList li p {
+.columnText {
+    display: flex;
+    flex-direction: column; 
+    gap: 4px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(245, 245, 245, 0.653);
+  }
+  
+
+.courseDescription {
     font-size: 18px;
     font-weight: 400;
     color: #ffffff;
     margin: 0;
 }
 
-.containerGap {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.learn {
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0;
+    padding: 8px 0;
+    border-bottom: 2px solid rgba(245, 245, 245, 0.653);
 }
 
 .descList {
@@ -77,8 +112,39 @@
     border-bottom: 2px solid rgba(245, 245, 245, 0.653);
 }
 
+.ppp {
+    margin: 0;
+    padding: 0;
+}
+
+.button3D {
+    display: inline-block;
+    padding: 15px 30px;
+    color: #fff;
+    height: 100%;
+    font-size: 16px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #a12ed2;
+    border-radius: 12px;
+    box-shadow: 0px 5px 0px #7321a6, 0px 10px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.button3D:active {
+    transform: translateY(5px);
+    box-shadow: 0px 2px 0px #7321a6, 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
 
 .descrCzas {
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     font-size: 18px;
     font-weight: 700;
     margin: 0;
