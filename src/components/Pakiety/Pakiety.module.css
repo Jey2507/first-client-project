@@ -144,8 +144,19 @@
 
 .divBuy {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
+}
+
+.priceSmall {
+    font-size: 22px;
+    margin: 0;
+    color: red !important;
+    font-weight: 600;
+    text-decoration: line-through;
+    text-align: end;
+    padding-right: 16px;
+    margin-top: 12px;
 }
 
 .descrBuy {

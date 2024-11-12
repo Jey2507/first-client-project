@@ -2,9 +2,12 @@ import css from "../Pakiety/Pakiety.module.css";
 import gift from "../../assets/images/reviews/gift-box.png";
 import clsx from "clsx";
 import { useLanguage } from "../../js/LanguageProvider.jsx"; // Імпортуємо хук для мови
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe('pk_test_51QKOCeFhNgTlpvpSgTdtn7m3jgLh0vi0n1ZrZgl9rNj8J6MixNoihPG69blNRVkCCXsvLCeETwT2dgJCSgf2Utje00SvBxPKCD')
 
 export default function Pakiety() {
-  const { language } = useLanguage(); // Використовуємо хук для отримання поточної мови
+  const { language } = useLanguage();
 
   // Тексти для двох мов
   const text = {
@@ -40,6 +43,25 @@ export default function Pakiety() {
     }
   };
 
+  const handleBuy = async (priceId) => {
+    const stripe = await stripePromise;
+    const response = await fetch('https://your-backend-url.com/create-checkout-session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ priceId }),
+    });
+
+    const session = await response.json();
+
+    const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+    if (result.error) {
+      console.error(result.error.message);
+    }
+  };
+
   return (
     <section id="pakiety" className={css.sectionPak}>
       <div className={css.containerPak}>
@@ -52,8 +74,13 @@ export default function Pakiety() {
             </div>
             <a className={css.linkPakBronze}>{text[language].package1}</a>
             <div className={css.divBuy}>
-              <p className={clsx(css.descrBuy, css.bronze)}>{text[language].price}: <span className={css.spanBuy}>9999 PLN</span></p>
-              <button className={css.button3D}>{text[language].buy}</button>
+            <span>
+                <p className={css.priceSmall}>420 PLN</p>
+                <p className={clsx(css.descrBuy, css.bronze)}>{text[language].price}: <span className={css.spanBuy}>380 PLN</span></p>
+            </span>
+            <button onClick={() => handleBuy('price_1HhU2YH8DS82G5e9lUwF9zH7')} className={css.button3D}>
+                {text[language].buy}
+            </button>
             </div>
           </li>
           <li>
@@ -69,8 +96,13 @@ export default function Pakiety() {
             </div>
             <a className={css.linkPakSilver}>{text[language].package2}</a>
             <div className={css.divBuy}>
-              <p className={clsx(css.descrBuy, css.silver)}>{text[language].price}: <span className={css.spanBuy}>9999 PLN</span></p>
-              <button className={css.button3D}>{text[language].buy}</button>
+            <span>
+                <p className={css.priceSmall}>690 PLN</p>
+                <p className={clsx(css.descrBuy, css.silver)}>{text[language].price}: <span className={css.spanBuy}>590 PLN</span></p>
+            </span>
+            <button onClick={() => handleBuy('price_1HhU2YH8DS82G5e9lUwF9zH7')} className={css.button3D}>
+                {text[language].buy}
+            </button>
             </div>
           </li>
           <li>
@@ -92,8 +124,13 @@ export default function Pakiety() {
             </div>
             <a className={css.linkPakGold}>{text[language].package3}</a>
             <div className={css.divBuy}>
-              <p className={clsx(css.descrBuy, css.gold)}>{text[language].price}: <span className={css.spanBuy}>9999 PLN</span></p>
-              <button className={css.button3D}>{text[language].buy}</button>
+            <span>
+                <p className={css.priceSmall}>1500 PLN</p>
+                <p className={clsx(css.descrBuy, css.gold)}>{text[language].price}: <span className={css.spanBuy}>1350 PLN</span></p>
+            </span>
+            <button onClick={() => handleBuy('price_1HhU2YH8DS82G5e9lUwF9zH7')} className={css.button3D}>
+                {text[language].buy}
+            </button>
             </div>
           </li>
         </ul>
