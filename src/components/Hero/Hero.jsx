@@ -36,6 +36,7 @@ export default function Hero() {
         <section className={css.divHero}>
             <div>
             <h1 className={css.heroText}>{text[language].heading}</h1>
+            <h1 className={css.telHeroText}>Beauty Content</h1>
                 <div className={css.divBack}>
                     <p className={css.heroDescr}>{text[language].description}</p>
                 </div>

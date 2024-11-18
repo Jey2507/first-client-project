@@ -1,4 +1,8 @@
 .heroText {
+    display: none;
+}
+
+.telHeroText {
     margin: 0px 0px 0px 12px;
     font-family: "Quicksand", sans-serif;
     font-size: 24px;
@@ -109,11 +113,25 @@
     }
 
     .heroText {
+        display: block;
+        margin: 0px 0px 0px 12px;
+        font-family: "Quicksand", sans-serif;
+        font-style: normal;
+        height: 280px;
+        line-height: 1.5;
+        color: #ffffff; 
+        text-shadow: 2px 2px 4px #e59af880;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         font-size: 32px;
         width: 300px;
         font-weight: 800;
         margin-bottom: 40px;
         margin-left: 0;
+    }
+
+    .telHeroText {
+        display: none;
     }
 
     .heroDescr {
