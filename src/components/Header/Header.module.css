@@ -1,12 +1,11 @@
 .headerSection {
-    position: absolute;
     max-width: 425px;
     height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
     padding: 0 22px;
-    background-color: rgba(151, 151, 151, 0.116);
+    background-color: rgba(255, 2, 234, 0.227);
 }
 
 .listHeaderOne {
@@ -98,7 +97,7 @@
 .navOpen {
     transform: translateX(0%); 
     opacity: 1;
-    background-color: rgb(235, 198, 255);
+    background-color: rgb(108, 50, 115);
 }
 
 .listHeader {
@@ -114,12 +113,14 @@
     font-family: "Quicksand", sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: #c64c8d;
+    color: #ffb1db;
     text-transform: uppercase;
 }
 
 @media screen and (min-width: 768px) {
     .headerSection {
+        position: absolute;
+        background-color: rgba(64, 14, 69, 0.315);
         max-width: 768px;
         padding: 0 40px;
     }
