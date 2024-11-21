@@ -8,25 +8,12 @@ export default function Insta() {
   const { language } = useLanguage(); // Використовуємо хук для отримання поточної мови
   const [courses, setCourses] = useState([]); // Створюємо стан для курсів
 
-  // Тексти для двох мов
-  const text = {
-    pl: {
-      title: "Kursy",
-      noCourses: "Brak dostępnych kursów"
-    },
-    en: {
-      title: "Courses",
-      noCourses: "No available courses"
-    }
-  };
-
-  // Використовуємо useEffect для завантаження курсів при монтуванні компонента
   useEffect(() => {
-    // Функція для отримання курсів
     const fetchCourses = async () => {
       try {
         const response = await axios.get('https://backend-client-50dq.onrender.com/kurs/info');
         setCourses(response.data); // Зберігаємо отримані курси в стан
+        console.log(response.data)
       } catch (error) {
         console.error('Помилка при завантаженні курсів:', error);
       }
@@ -34,6 +21,29 @@ export default function Insta() {
 
     fetchCourses(); 
   }, []);
+
+  // Перевірка на наявність курсів, щоб уникнути помилки деструктуризації
+  const title = courses?.title || {};
+  const description = courses?.description || {};
+  const learn = courses?.learn || {};
+  const bonuses = courses?.bonuses || {};
+
+  const text = {
+    pl: {
+      title: title.pl || "Tytuł kursu po polsku",
+      description: description.pl || "Opis kursu po polsku",
+      learn: learn.pl || "Co się nauczysz po polsku",
+      bonuses: bonuses.pl || "Bonusy po polsku",
+      noCourses: "Brak dostępnych kursów"
+    },
+    en: {
+      title: "Courses",
+      description: description.en || "Course description in English",
+      learn: learn.en || "What you will learn in English",
+      bonuses: bonuses.en || "Bonuses in English",
+      noCourses: "No available courses"
+    }
+  };
 
   const splitDescription = (description) => {
     if (description.includes('&')) {
@@ -71,23 +81,23 @@ export default function Insta() {
   return (
     <section id="kursy" className={css.sectionPro}>
       <div className={css.containerPro}>
-        <h2 className={css.textPro}>{text[language].title}</h2>
+        <h2 className={css.textPro}>{text[language]?.title}</h2>
           {courses.length > 0 ? (
             courses.map((course) => (
-            <div key={course.course_id} className={css.boxText}>
+            <div key={course.courseId} className={css.boxText}>
               <div  className={css.courseItem}>
-                <h3 className={css.descrPro}>{course.title}</h3>
+                <h3 className={css.descrPro}>{text[language]?.title}</h3>
                 
                 <div className={css.columnText}>
-                  {splitDescription(course.description)}
+                  {splitDescription(text[language]?.description)}
                 </div>
 
                 <div>
-                  {splitText(course.learn)}
+                  {splitText(text[language]?.learn)}
                 </div>
 
                 <div className={css.descrCzas}>
-                    {splitBonus(course.bonuses)} 
+                    {splitBonus(text[language]?.bonuses)} 
                 </div>
 
               </div>
@@ -101,7 +111,7 @@ export default function Insta() {
             </div>
             ))
           ) : (
-            <p className={css.noCourses}>{text[language].noCourses}</p>
+            <p className={css.noCourses}>{text[language]?.noCourses}</p>
           )}
       </div>
     </section>
