@@ -106,7 +106,7 @@ export default function Pakiety() {
                 <p className={css.priceSmall}>690 PLN</p>
                 <p className={clsx(css.descrBuy, css.silver)}>{text[language].price}: <span className={css.spanBuy}>590 PLN</span></p>
               </span>
-              <button onClick={() => handleBuy('prod_RCoUDI77sjgHRM')} className={css.button3D}>
+              <button onClick={() => handleBuy('price_1QNb6OFhNgTlpvpSTdrqMOri')} className={css.button3D}>
                 {text[language].buy}
               </button>
             </div>
