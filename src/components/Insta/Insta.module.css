@@ -152,6 +152,15 @@
     text-shadow: 0 0 10px rgba(228, 95, 245, 0.9), 0 0 20px rgba(228, 95, 245, 0.8);
 }
 
+.noCourses {
+    padding: 20px;
+    background-color: #7321a6;
+    color: whitesmoke;
+    font-size: 22px;
+    width: 100%;
+    text-align: center;
+}
+
 @media screen and (min-width: 768px) {
     .sectionPro {
         padding: 60px 0;
