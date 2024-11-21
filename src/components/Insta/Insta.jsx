@@ -80,7 +80,7 @@ export default function Insta() {
   };
 
   const handleBuy = async (priceId) => {
-  
+    const stripe = await stripePromise;
     try {
       const response = await axios.post('https://backend-client-50dq.onrender.com/create-checkout-session', {
         priceId
@@ -89,20 +89,18 @@ export default function Insta() {
           'Content-Type': 'application/json',
         }
       });
-  
+
       const session = response.data;
-  
-      // Відкриття сторінки Stripe Checkout у новому вікні
-      if (session && session.url) {
-        window.open(session.url, '_blank');
-      } else {
-        console.error("Не вдалося отримати URL сесії.");
+
+      const result = await stripe.redirectToCheckout({ sessionId: session.id });
+      
+      if (result.error) {
+        console.error(result.error.message);
       }
     } catch (error) {
       console.error("Помилка під час створення сесії:", error);
     }
   };
-  
 
   return (
     <section id="kursy" className={css.sectionPro}>
