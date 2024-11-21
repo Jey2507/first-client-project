@@ -66,7 +66,7 @@ export default function Header() {
 
                     <div className={css.listButton}>
                         <button onClick={toggleLanguage} className={css.languageSwitch}>
-                            {language === 'pl' ? 'EN' : 'PL'} {/* Кнопка для перемикання мови */}
+                            {language === 'pl' ? 'EN' : 'PL'} 
                         </button>
                         <button onClick={handleOn} className={css.burger}>
                             <img src={burger} alt="burger-menu" />
