@@ -4,6 +4,8 @@ import css from "../Insta/Insta.module.css";
 import gift from "../../assets/images/reviews/gift-box.png";
 import { useLanguage } from "../../js/LanguageProvider.jsx"; 
 
+const stripePromise = loadStripe('pk_live_51QKOCeFhNgTlpvpSHo1hkgln2LH8EIPPEru1PLetMl6rUH1lpFhfQm0KfPE5xFvZMG3XcboZOJaRLuC1Qmivtgn400GhwfmWsa');
+
 export default function Insta() {
   const { language } = useLanguage();
   const [courses, setCourses] = useState([]);
@@ -76,6 +78,30 @@ export default function Insta() {
     );
   };
 
+  const handleBuy = async (priceId) => {
+    const stripe = await stripePromise;
+    console.log(stripe,"dkfjdkfjdkfjdfj")
+    try {
+      const response = await axios.post('https://backend-client-50dq.onrender.com/create-checkout-session', {
+        priceId
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+
+      const session = response.data;
+
+      const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+      if (result.error) {
+        console.error(result.error.message);
+      }
+    } catch (error) {
+      console.error("Помилка під час створення сесії:", error);
+    }
+  };
+
   return (
     <section id="kursy" className={css.sectionPro}>
       <div className={css.containerPro}>
@@ -110,7 +136,7 @@ export default function Insta() {
                     <p className={css.priceSmall}>{course.price} PLN</p>
                     <p className={css.descrBuy}>{course.priceSmall}<span className={css.spanBuy}> PLN</span></p>
                   </span>
-                  <button className={css.button3D}>Buy</button>
+                  <button className={css.button3D} onClick={() => handleBuy(course.productCode)}>Buy</button>
                 </div>
               </div>
             );
