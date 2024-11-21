@@ -43,10 +43,8 @@ export default function Pakiety() {
       noAccess: "No available packages",
     }
   };
-
   const handleBuy = async (priceId) => {
-    const stripe = await stripePromise;
-    console.log(stripe,"dkfjdkfjdkfjdfj")
+  
     try {
       const response = await axios.post('https://backend-client-50dq.onrender.com/create-checkout-session', {
         priceId
@@ -55,18 +53,20 @@ export default function Pakiety() {
           'Content-Type': 'application/json',
         }
       });
-
+  
       const session = response.data;
-
-      const result = await stripe.redirectToCheckout({ sessionId: session.id });
-
-      if (result.error) {
-        console.error(result.error.message);
+  
+      // Відкриття сторінки Stripe Checkout у новому вікні
+      if (session && session.url) {
+        window.open(session.url, '_blank');
+      } else {
+        console.error("Не вдалося отримати URL сесії.");
       }
     } catch (error) {
       console.error("Помилка під час створення сесії:", error);
     }
   };
+  
 
   return (
     <section id="pakiety" className={css.sectionPak}>
