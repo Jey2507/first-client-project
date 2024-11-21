@@ -155,10 +155,11 @@
 .noCourses {
     padding: 20px;
     background-color: #7321a6;
-    color: whitesmoke;
+    color: rgba(245, 245, 245, 0.81);
     font-size: 22px;
     width: 100%;
     text-align: center;
+    border-radius: 12px;
 }
 
 @media screen and (min-width: 768px) {
