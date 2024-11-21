@@ -3,6 +3,7 @@ import axios from 'axios';
 import css from "../Insta/Insta.module.css";
 import gift from "../../assets/images/reviews/gift-box.png";
 import { useLanguage } from "../../js/LanguageProvider.jsx"; 
+import { loadStripe } from '@stripe/stripe-js';
 
 const stripePromise = loadStripe('pk_live_51QKOCeFhNgTlpvpSHo1hkgln2LH8EIPPEru1PLetMl6rUH1lpFhfQm0KfPE5xFvZMG3XcboZOJaRLuC1Qmivtgn400GhwfmWsa');
 
