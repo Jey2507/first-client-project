@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import Header from "../Header/Header.jsx";
 import css from "../App/App.module.css";
 import Hero from "../Hero/Hero.jsx";
@@ -9,8 +10,23 @@ import Insta from "../Insta/Insta.jsx";
 import Reviews from "../ReviewFoto/ReviewFoto.jsx";
 
 function App() {
+  const [paymentStatus, setPaymentStatus] = useState(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get('payment_status');
+    if (status === 'failed') {
+      setPaymentStatus('Оплата не пройшла. Будь ласка, спробуйте ще раз.');
+    }
+  }, []);
+
   return (
     <div className={css.mainDiv}>
+      {paymentStatus && (
+        <div className={css.paymentErrorMessage} style={{ color: 'red', padding: '20px', textAlign: 'center' }}>
+          {paymentStatus}
+        </div>
+      )}
       <Header />
       <Hero />
       <AboutMe />
