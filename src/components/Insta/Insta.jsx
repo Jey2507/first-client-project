@@ -79,11 +79,12 @@ export default function Insta() {
     );
   };
 
-  const handleBuy = async (priceId) => {
+  const handleBuy = async (priceId, link) => {
     const stripe = await stripePromise;
     try {
       const response = await axios.post('https://backend-client-50dq.onrender.com/create-checkout-session', {
-        priceId
+        priceId,
+        link
       }, {
         headers: {
           'Content-Type': 'application/json',
@@ -136,7 +137,7 @@ export default function Insta() {
                     <p className={css.priceSmall}>{course.price} PLN</p>
                     <p className={css.descrBuy}>{course.priceSmall}<span className={css.spanBuy}> PLN</span></p>
                   </span>
-                  <button className={css.button3D} onClick={() => handleBuy(course.productCode)}>Buy</button>
+                  <button className={css.button3D} onClick={() => handleBuy(course.productCode, course.link)}>Buy</button>
                 </div>
               </div>
             );
