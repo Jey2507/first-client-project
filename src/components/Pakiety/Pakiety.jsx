@@ -5,7 +5,7 @@ import { useLanguage } from "../../js/LanguageProvider.jsx"; // Імпортує
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios"; // Імпортуємо axios
 
-const stripePromise = loadStripe('pk_live_51QKOCeFhNgTlpvpSHo1hkgln2LH8EIPPEru1PLetMl6rUH1lpFhfQm0KfPE5xFvZMG3XcboZOJaRLuC1Qmivtgn400GhwfmWsa');
+const stripePromise = loadStripe('pk_live_51QPgAMRpHtXeYF3Zxajw1LPO8ieOevYhR9AVQ3yHAXH3Viw4PurnxjiI1XohOaysS6bmgScCVdFyMART9Hx7QhCG00Hs6nFzlX');
 
 export default function Pakiety() {
   const { language } = useLanguage();
@@ -19,11 +19,11 @@ export default function Pakiety() {
       package3: "Pakiet Vip:",
       price: "Cena",
       buy: "Kupić",
-      access: "dostęp do 5 moduły",
+      access: "dostęp do 5 modułów",
       groupChat: "dostęp do czatu grupowego",
       zoom: "zoom",
       homework: "sprawdzanie pracy domowej i odwrotna info.",
-      bonus: "dostęp do bonusu 6 moduły",
+      bonus: "dostęp do bonusu 6 modułów",
       vipBonus: "bonus online kurs „InstaPaznokcie”",
       noAccess: "Brak dostępu do kursów",
     },
@@ -83,7 +83,7 @@ export default function Pakiety() {
                 <p className={css.priceSmall}>420 PLN</p>
                 <p className={clsx(css.descrBuy, css.bronze)}>{text[language].price}: <span className={css.spanBuy}>380 PLN</span></p>
               </span>
-              <button onClick={() => handleBuy('price_1QKRhJFhNgTlpvpSdLJ5jJXL')} className={css.button3D}>
+              <button onClick={() => handleBuy('price_1QPs03RpHtXeYF3Zs2P7E7MB')} className={css.button3D}>
                 {text[language].buy}
               </button>
             </div>
@@ -105,7 +105,7 @@ export default function Pakiety() {
                 <p className={css.priceSmall}>690 PLN</p>
                 <p className={clsx(css.descrBuy, css.silver)}>{text[language].price}: <span className={css.spanBuy}>590 PLN</span></p>
               </span>
-              <button onClick={() => handleBuy('price_1QNb6OFhNgTlpvpSTdrqMOri')} className={css.button3D}>
+              <button onClick={() => handleBuy('price_1QPs1GRpHtXeYF3ZCOgGfzF9')} className={css.button3D}>
                 {text[language].buy}
               </button>
             </div>
@@ -133,7 +133,7 @@ export default function Pakiety() {
                 <p className={css.priceSmall}>1500 PLN</p>
                 <p className={clsx(css.descrBuy, css.gold)}>{text[language].price}: <span className={css.spanBuy}>1350 PLN</span></p>
               </span>
-              <button onClick={() => handleBuy('prod_RCoVIfVMEGPN19')} className={css.button3D}>
+              <button onClick={() => handleBuy('price_1QPs2XRpHtXeYF3Zd1wXJY9a')} className={css.button3D}>
                 {text[language].buy}
               </button>
             </div>
