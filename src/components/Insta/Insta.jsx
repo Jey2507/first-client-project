@@ -134,8 +134,8 @@ export default function Insta() {
                 </div>
                 <div className={css.divBuy}>
                   <span>
-                    <p className={css.priceSmall}>{course.price} PLN</p>
-                    <p className={css.descrBuy}>{course.priceSmall}<span className={css.spanBuy}> PLN</span></p>
+                    <p className={css.priceSmall}>{course.priceSmall} PLN</p>
+                    <p className={css.descrBuy}>{course.price}<span className={css.spanBuy}> PLN</span></p>
                   </span>
                   <button className={css.button3D} onClick={() => handleBuy(course.productCode, course.link)}>Buy</button>
                 </div>
