@@ -85,7 +85,10 @@ export default function AboutMe() {
                         <h3 className={css.textSkils}>{text[language].courseTitle}</h3>
                         <ul>
                             <li>
-                                <p className={css.descrAbout}><span className={css.span}>{text[language].courseDetails.split(" ")[0]}</span> {text[language].courseDetails.slice(1)}</p>
+                            <p className={css.descrAbout}>
+                                <span className={css.span}>{text[language].courseDetails.split(" ")[0]}</span>  {text[language].courseDetails.substring(text[language].courseDetails.indexOf(" ") + 1)}
+                            </p>
+
                             </li>
                         </ul>
                     </div>
