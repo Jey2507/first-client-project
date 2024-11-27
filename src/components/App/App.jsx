@@ -20,12 +20,12 @@ function App() {
     }
   }, []);
 
+  window.addEventListener('load', () => {
+    if (window.location.search.includes("payment_status")) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  });
 
-  const url = new URL(window.location.href);
-
-  url.search = '';
-
-  window.history.replaceState(null, '', url.toString());
 
   return (
     <div className={css.mainDiv}>
