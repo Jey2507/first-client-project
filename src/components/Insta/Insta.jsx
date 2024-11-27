@@ -3,9 +3,7 @@ import axios from 'axios';
 import css from "../Insta/Insta.module.css";
 import gift from "../../assets/images/reviews/gift-box.png";
 import { useLanguage } from "../../js/LanguageProvider.jsx"; 
-import { loadStripe } from '@stripe/stripe-js';
-
-const stripePromise = loadStripe('pk_live_51QKOCeFhNgTlpvpSHo1hkgln2LH8EIPPEru1PLetMl6rUH1lpFhfQm0KfPE5xFvZMG3XcboZOJaRLuC1Qmivtgn400GhwfmWsa');
+import { handleBuy } from '../../js/stripe.js';
 
 export default function Insta() {
   const { language } = useLanguage();
@@ -79,29 +77,7 @@ export default function Insta() {
     );
   };
 
-  const handleBuy = async (priceId, link) => {
-    const stripe = await stripePromise;
-    try {
-      const response = await axios.post('https://backend-client-50dq.onrender.com/create-checkout-session', {
-        priceId,
-        link
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      });
 
-      const session = response.data;
-
-      const result = await stripe.redirectToCheckout({ sessionId: session.id });
-      
-      if (result.error) {
-        console.error(result.error.message);
-      }
-    } catch (error) {
-      console.error("Помилка під час створення сесії:", error);
-    }
-  };
 
   return (
     <section id="kursy" className={css.sectionPro}>

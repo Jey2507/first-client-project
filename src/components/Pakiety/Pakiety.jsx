@@ -2,10 +2,7 @@ import css from "../Pakiety/Pakiety.module.css";
 import gift from "../../assets/images/reviews/gift-box.png";
 import clsx from "clsx";
 import { useLanguage } from "../../js/LanguageProvider.jsx"; // Імпортуємо хук для мови
-import { loadStripe } from "@stripe/stripe-js";
-import axios from "axios"; // Імпортуємо axios
-
-const stripePromise = loadStripe('pk_live_51QPgAMRpHtXeYF3Zxajw1LPO8ieOevYhR9AVQ3yHAXH3Viw4PurnxjiI1XohOaysS6bmgScCVdFyMART9Hx7QhCG00Hs6nFzlX');
+import {handleBuy} from "../../js/stripe.js"
 
 export default function Pakiety() {
   const { language } = useLanguage();
@@ -44,28 +41,7 @@ export default function Pakiety() {
     }
   };
 
-  const handleBuy = async (priceId) => {
-    const stripe = await stripePromise;
-    try {
-      const response = await axios.post('https://backend-client-50dq.onrender.com/create-checkout-session', {
-        priceId
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      });
 
-      const session = response.data;
-
-      const result = await stripe.redirectToCheckout({ sessionId: session.id });
-
-      if (result.error) {
-        console.error(result.error.message);
-      }
-    } catch (error) {
-      console.error("Помилка під час створення сесії:", error);
-    }
-  };
 
   return (
     <section id="pakiety" className={css.sectionPak}>
@@ -83,7 +59,7 @@ export default function Pakiety() {
                 <p className={css.priceSmall}>420 PLN</p>
                 <p className={clsx(css.descrBuy, css.bronze)}>{text[language].price}: <span className={css.spanBuy}>380 PLN</span></p>
               </span>
-              <button onClick={() => handleBuy('price_1QPs03RpHtXeYF3Zs2P7E7MB')} className={css.button3D}>
+              <button onClick={() => handleBuy('price_1QPs03RpHtXeYF3Zs2P7E7MB', "https://t.me/+20nXNO3gGNY3NWM0")} className={css.button3D}>
                 {text[language].buy}
               </button>
             </div>
@@ -105,7 +81,7 @@ export default function Pakiety() {
                 <p className={css.priceSmall}>690 PLN</p>
                 <p className={clsx(css.descrBuy, css.silver)}>{text[language].price}: <span className={css.spanBuy}>590 PLN</span></p>
               </span>
-              <button onClick={() => handleBuy('price_1QPs1GRpHtXeYF3ZCOgGfzF9')} className={css.button3D}>
+              <button onClick={() => handleBuy('price_1QPs1GRpHtXeYF3ZCOgGfzF9', "https://t.me/+20nXNO3gGNY3NWM0")} className={css.button3D}>
                 {text[language].buy}
               </button>
             </div>
@@ -133,7 +109,7 @@ export default function Pakiety() {
                 <p className={css.priceSmall}>1500 PLN</p>
                 <p className={clsx(css.descrBuy, css.gold)}>{text[language].price}: <span className={css.spanBuy}>1350 PLN</span></p>
               </span>
-              <button onClick={() => handleBuy('price_1QPs2XRpHtXeYF3Zd1wXJY9a')} className={css.button3D}>
+              <button onClick={() => handleBuy('price_1QPs2XRpHtXeYF3Zd1wXJY9a', "https://t.me/+20nXNO3gGNY3NWM0")} className={css.button3D}>
                 {text[language].buy}
               </button>
             </div>

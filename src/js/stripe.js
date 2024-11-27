@@ -27,3 +27,27 @@ export const handleCheckout = async (priceId) => {
     console.error('Error during checkout session creation:', error);
   }
 };
+
+export const handleBuy = async (priceId, link) => {
+  const stripe = await stripePromise;
+  try {
+    const response = await axios.post('https://backend-client-50dq.onrender.com/create-checkout-session', {
+      priceId,
+      link
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+
+    const session = response.data;
+
+    const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+    if (result.error) {
+      console.error(result.error.message);
+    }
+  } catch (error) {
+    console.error("Помилка під час створення сесії:", error);
+  }
+};

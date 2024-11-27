@@ -20,6 +20,13 @@ function App() {
     }
   }, []);
 
+
+  const url = new URL(window.location.href);
+
+  url.search = '';
+
+  window.history.replaceState(null, '', url.toString());
+
   return (
     <div className={css.mainDiv}>
       {paymentStatus && (
