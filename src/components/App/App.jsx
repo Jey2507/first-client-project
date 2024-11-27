@@ -16,7 +16,7 @@ function App() {
     const params = new URLSearchParams(window.location.search);
     const status = params.get('payment_status');
     if (status === 'failed') {
-      setPaymentStatus('Оплата не пройшла. Будь ласка, спробуйте ще раз.');
+      setPaymentStatus('The payment did not go through. Please try again.');
     }
   }, []);
 
