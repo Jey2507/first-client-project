@@ -70,12 +70,18 @@ export default function AboutMe() {
                         <img className={css.ribbon} src={camera} alt="ribbon" />
                         <h3 className={css.textSkils}>{text[language].subtitle}</h3>
                         <ul className={css.listMe}>
-                            {text[language].bulletPoints.map((point, index) => (
-                                <li key={index}>
-                                    <p className={css.descrAbout}><span className={css.span}>{point.split(" ")[0]}</span> {point.slice(2)}</p>
-                                </li>
-                            ))}
+                            {text[language].bulletPoints.map((point, index) => {
+                                const [hashtag, ...rest] = point.split(" "); 
+                                return (
+                                    <li key={index}>
+                                        <p className={css.descrAbout}>
+                                            <span className={css.span}>{hashtag}</span> {rest.join(" ")}
+                                        </p>
+                                    </li>
+                                );
+                            })}
                         </ul>
+
                         <h3 className={css.textSkils}>{text[language].courseTitle}</h3>
                         <ul>
                             <li>
