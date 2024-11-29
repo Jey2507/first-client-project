@@ -4,6 +4,7 @@ import css from "../Insta/Insta.module.css";
 import gift from "../../assets/images/reviews/gift-box.png";
 import { useLanguage } from "../../js/LanguageProvider.jsx"; 
 import { handleBuy } from '../../js/stripe.js';
+import Loading from '../Loading/Loading.jsx';
 
 export default function Insta() {
   const { language } = useLanguage();
@@ -119,7 +120,7 @@ export default function Insta() {
             );
           })
         ) : (
-          <p className={css.noCourses}>{text[language]?.noCourses}</p>
+          <Loading />
         )}
         {error && <p className={css.error}>{error}</p>}
       </div>
