@@ -101,15 +101,15 @@
     background-color: rgba(245, 245, 245, 0.926);
 }
 
-.listPak li a.linkPakGold {
+.listPak li a.gold {
     background-color: gold;
 }
 
-.listPak li a.linkPakSilver {
+.listPak li a.silver {
     background-color: silver;
 }
 
-.listPak li a.linkPakBronze {
+.listPak li a.bronze {
     background-color: rgb(251, 192, 115);
 }
 

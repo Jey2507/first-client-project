@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import Swiper from "swiper";
 import "swiper/css";
 import clsx from "clsx";
@@ -6,6 +6,8 @@ import css from "../ReviewFoto/ReviewFoto.module.css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { fetchImages } from "../../js/operations.js";
+import { icons as sprite } from '../../assets/images/index.js';
+import { useLanguage } from "../../js/LanguageProvider.jsx"; 
 
 import imageOne from "../../assets/images/reviews/review_one.png";
 import imageTwo from "../../assets/images/reviews/review_two.png";
@@ -23,31 +25,27 @@ import imageThird from "../../assets/images/reviews/review_thrid.png";
 import imageFourteen from "../../assets/images/reviews/review_fourteen.png";
 import imageFiveteen from "../../assets/images/reviews/review_fifteen.png";
 import imageSixteen from "../../assets/images/reviews/review_sexteen.png";
-import { icons as sprite } from '../../assets/images/index.js';
-import { useLanguage } from "../../js/LanguageProvider.jsx"; // Імпортуємо хук для мови
 
 const localImages = [
   imageOne, imageTwo, imageThree, imageFour, imageFive,
   imageSix, imageSeven, imageEigth, imageNine, imageTen,
   imageEleven, imageTwel, imageThird, imageFourteen, imageFiveteen, imageSixteen
 ];
-
 const ReviewFoto = () => {
-  const { language } = useLanguage(); // Отримуємо поточну мову
+  const { language } = useLanguage();
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
   const swiperContainerRef = useRef(null);
   const swiperRef = useRef(null);
 
-  const [images, setImages] = useState(localImages); // Ініціалізуємо стан локальними фото
+  const [images, setImages] = useState(localImages); 
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
-  // Тексти для польської та англійської мов
   const text = {
     pl: {
       title: "Opinii",
-      clickToOpen: "Kliknij, щоб відкрити",
+      clickToOpen: "Kliknij, aby otworzyć",
     },
     en: {
       title: "Reviews",
@@ -55,16 +53,23 @@ const ReviewFoto = () => {
     }
   };
 
-  useEffect(() => {
-    // Функція для запиту фото з бекенду
-    const loadImages = async () => {
-      const apiImages = await fetchImages();
-      const apiImageUrls = apiImages.map((image) => image.url); // Отримуємо URL зображень
-      setImages([...apiImageUrls, ...localImages]); // Додаємо фото з API до локальних
-    };
-
-    loadImages();
+  // Використовуємо useCallback для оптимізації функції завантаження зображень
+  const loadImages = useCallback(async () => {
+    const apiImages = await fetchImages();
+    const apiImageUrls = apiImages.map((image) => image.url); 
+    setImages((prevImages) => [...apiImageUrls, ...prevImages]); 
   }, []);
+
+  useEffect(() => {
+    loadImages(); // Завантажуємо зображення лише при першому рендері
+
+    return () => {
+      if (swiperRef.current) {
+        swiperRef.current.destroy();
+        swiperRef.current = null;
+      }
+    };
+  }, [loadImages]); 
 
   useEffect(() => {
     if (prevButtonRef.current && nextButtonRef.current && swiperContainerRef.current && !swiperRef.current) {
@@ -90,16 +95,8 @@ const ReviewFoto = () => {
         }
       };
 
-      updateButtonStates();
       swiperRef.current.on("slideChange", updateButtonStates);
     }
-
-    return () => {
-      if (swiperRef.current) {
-        swiperRef.current.destroy();
-        swiperRef.current = null;
-      }
-    };
   }, [images]);
 
   const openLightbox = (index) => {

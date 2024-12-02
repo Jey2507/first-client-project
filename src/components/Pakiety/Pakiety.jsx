@@ -1,14 +1,51 @@
-import css from "../Pakiety/Pakiety.module.css";
-import gift from "../../assets/images/reviews/gift-box.png";
+import { useMemo } from "react";
+import css from "../Pakiety/Pakiety.module.css"; // Імпортуємо стилі
 import clsx from "clsx";
 import { useLanguage } from "../../js/LanguageProvider.jsx"; // Імпортуємо хук для мови
-import {handleBuy} from "../../js/stripe.js"
+import { handleBuy } from "../../js/stripe.js";
+import PropTypes from 'prop-types';
+
+const Package = ({ description, title, price, salePrice, buttonHandler, buttonText, language, packageType, text }) => {
+  return (
+    <li className={clsx(css.package, css[packageType])}>
+      {description && description.length > 0 && (
+        <div>
+          {description.map((desc, idx) => <p key={idx}>- {desc}</p>)}
+        </div>
+      )}
+      <a className={clsx(css.linkPak, css[packageType])}>{title}</a>
+      <div className={css.divBuy}>
+        <span>
+          <p className={css.priceSmall}>{price} PLN</p>
+          <p className={clsx(css.descrBuy, css[packageType])}>
+            {text[language].price}: <span className={css.spanBuy}>{salePrice} PLN</span>
+          </p>
+        </span>
+        <button onClick={buttonHandler} className={clsx(css.button3D, css[packageType])}>
+          {buttonText}
+        </button>
+      </div>
+    </li>
+  );
+};
+
+Package.propTypes = {
+  description: PropTypes.arrayOf(PropTypes.string).isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  salePrice: PropTypes.string.isRequired,
+  buttonHandler: PropTypes.func.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  language: PropTypes.string.isRequired,
+  packageType: PropTypes.string.isRequired,
+  text: PropTypes.object.isRequired, // Додаємо валідацію для text
+};
 
 export default function Pakiety() {
   const { language } = useLanguage();
 
   // Тексти для двох мов
-  const text = {
+  const text = useMemo(() => ({
     pl: {
       title: "Do wyboru:",
       package1: "Pakiet1: Tylko oglądać",
@@ -39,83 +76,51 @@ export default function Pakiety() {
       vipBonus: "bonus online course 'InstaPaznokcie'",
       noAccess: "No available packages",
     }
-  };
+  }), []);
 
-
+  const packages = [
+    {
+      title: text[language].package1,
+      description: [text[language].access, text[language].groupChat],
+      price: "420",
+      salePrice: "380",
+      buttonHandler: () => handleBuy('price_1QPs03RpHtXeYF3Zs2P7E7MB', "https://t.me/+20nXNO3gGNY3NWM0"),
+      buttonText: text[language].buy,
+      packageType: "bronze"
+    },
+    {
+      title: text[language].package2,
+      description: [text[language].access, text[language].groupChat, text[language].zoom, text[language].homework, text[language].bonus],
+      price: "690",
+      salePrice: "590",
+      buttonHandler: () => handleBuy('price_1QPs1GRpHtXeYF3ZCOgGfzF9', "https://t.me/+20nXNO3gGNY3NWM0"),
+      buttonText: text[language].buy,
+      packageType: "silver"
+    },
+    {
+      title: text[language].package3,
+      description: [text[language].access, "osobny czat", "osobne zoom", "osobna analiza", text[language].bonus, text[language].vipBonus],
+      price: "1500",
+      salePrice: "1300",
+      buttonHandler: () => handleBuy('price_1QPs0HRpHtXeYF3Z1ldp3xJl', "https://t.me/+20nXNO3gGNY3NWM0"),
+      buttonText: text[language].buy,
+      packageType: "gold"
+    }
+  ];
 
   return (
-    <section id="pakiety" className={css.sectionPak}>
-      <div className={css.containerPak}>
-        <h2 className={css.textPakiety}>{text[language].title}</h2>
-        <ul className={css.listPak}>
-          <li>
-            <div>
-              <p>- {text[language].access}</p>
-              <p>- {text[language].groupChat}</p>
-            </div>
-            <a className={css.linkPakBronze}>{text[language].package1}</a>
-            <div className={css.divBuy}>
-              <span>
-                <p className={css.priceSmall}>420 PLN</p>
-                <p className={clsx(css.descrBuy, css.bronze)}>{text[language].price}: <span className={css.spanBuy}>380 PLN</span></p>
-              </span>
-              <button onClick={() => handleBuy('price_1QPs03RpHtXeYF3Zs2P7E7MB', "https://t.me/+20nXNO3gGNY3NWM0")} className={css.button3D}>
-                {text[language].buy}
-              </button>
-            </div>
-          </li>
-          <li>
-            <div>
-              <p>- {text[language].access}</p>
-              <p>- {text[language].groupChat}</p>
-              <p>- {text[language].zoom}</p>
-              <p>- {text[language].homework}</p>
-              <div className={clsx(css.boxGift, css.megaBoxSilver)}>
-                <img className={css.gift} src={gift} alt="gift" />
-                <p className={css.bonus}>- {text[language].bonus}</p>
-              </div>
-            </div>
-            <a className={css.linkPakSilver}>{text[language].package2}</a>
-            <div className={css.divBuy}>
-              <span>
-                <p className={css.priceSmall}>690 PLN</p>
-                <p className={clsx(css.descrBuy, css.silver)}>{text[language].price}: <span className={css.spanBuy}>590 PLN</span></p>
-              </span>
-              <button onClick={() => handleBuy('price_1QPs1GRpHtXeYF3ZCOgGfzF9', "https://t.me/+20nXNO3gGNY3NWM0")} className={css.button3D}>
-                {text[language].buy}
-              </button>
-            </div>
-          </li>
-          <li>
-            <div>
-              <p>- {text[language].access}</p>
-              <p>- osobny czat</p>
-              <p>- osobne zoom</p>
-              <p>- osobna analiza</p>
-              <div className={css.megaBox}>
-                <div className={css.boxGift}>
-                  <img className={css.gift} src={gift} alt="gift" />
-                  <p className={css.bonus}>- {text[language].bonus}</p>
-                </div> 
-                <div className={css.boxGift}>
-                  <img className={css.gift} src={gift} alt="gift" />
-                  <p className={css.bonus}>- {text[language].vipBonus}</p>
-                </div>
-              </div>
-            </div>
-            <a className={css.linkPakGold}>{text[language].package3}</a>
-            <div className={css.divBuy}>
-              <span>
-                <p className={css.priceSmall}>1500 PLN</p>
-                <p className={clsx(css.descrBuy, css.gold)}>{text[language].price}: <span className={css.spanBuy}>1350 PLN</span></p>
-              </span>
-              <button onClick={() => handleBuy('price_1QPs2XRpHtXeYF3Zd1wXJY9a', "https://t.me/+20nXNO3gGNY3NWM0")} className={css.button3D}>
-                {text[language].buy}
-              </button>
-            </div>
-          </li>
-        </ul>
-      </div>
+    <section className={css.sectionPak} id="Pakiety">
+      <h2 className={css.textPakiety}>{text[language].title}</h2>
+      <ul className={css.listPak}>
+        {packages.map((pkg, index) => (
+          <Package
+            key={index}
+            {...pkg}
+            language={language}
+            text={text} // Передаємо text як пропс
+          />
+        ))}
+      </ul>
     </section>
   );
 }

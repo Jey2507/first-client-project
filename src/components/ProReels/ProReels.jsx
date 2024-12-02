@@ -1,5 +1,5 @@
 import css from "../ProReels/ProReels.module.css";
-import { useLanguage } from "../../js/LanguageProvider.jsx"; // Імпортуємо хук для мови
+import { useLanguage } from "../../js/LanguageProvider.jsx"; // Хук для мови
 
 export default function ProReels() {
   const { language } = useLanguage(); // Отримуємо поточну мову
@@ -10,8 +10,8 @@ export default function ProReels() {
       title: "ProReels",
       descriptionTitle: "REELS BEZ WYPALENIA.",
       list: [
-        "Praktykujący kurs na którym ty nauczysz się tworzyć Reels,i zamiast wypalenia przyciągniesz klientów.",
-        "Dowiesz się wszystki triki, i jak przyciągać nowych obserwatorów w twój blog.",
+        "Praktykujący kurs na którym ty nauczysz się tworzyć Reels, i zamiast wypalenia przyciągniesz klientów.",
+        "Dowiesz się wszystkie triki, i jak przyciągać nowych obserwatorów w twój blog.",
         "Ty napewno zejdziesz z martwego punktu.",
         "Dowiesz się jakie urządzenia potrzebujesz dla nagrania zajebistych rolek.",
         "Nie zostanie pytania „ Co musze nagrywać?”.",
