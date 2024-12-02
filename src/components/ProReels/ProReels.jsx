@@ -51,7 +51,7 @@ export default function ProReels() {
   };
 
   return (
-    <section id="proreels" className={css.sectionPro}>
+    <section id="proReels" className={css.sectionPro}>
       <div className={css.containerPro}>
         <h2 className={css.textPro}>{text[language].title}</h2>
         <div className={css.boxText}>

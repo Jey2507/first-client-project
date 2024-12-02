@@ -106,7 +106,7 @@ const ReviewFoto = () => {
 
   return (
     <>
-      <section className={css.section} id="projects">
+      <section className={css.section} id="reviews">
         <div className={css.container}>
           <h2 className={css.sectionsTitle}>{text[language].title}</h2>
           <div className="swiper swiper-projects" ref={swiperContainerRef}>

@@ -90,7 +90,7 @@ export default function Insta() {
   if (isLoading) return <Loading />;
 
   return (
-    <section id="kursy" className={css.sectionPro}>
+    <section id="courses" className={css.sectionPro}>
       <div className={css.containerPro}>
         <h2 className={css.textPro}>{text[language]?.mainText}</h2>
         {courses.length > 0 ? (

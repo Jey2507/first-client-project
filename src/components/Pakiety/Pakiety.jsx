@@ -109,7 +109,7 @@ export default function Pakiety() {
   ];
 
   return (
-    <section className={css.sectionPak} id="Pakiety">
+    <section className={css.sectionPak} id="packages">
       <h2 className={css.textPakiety}>{text[language].title}</h2>
       <ul className={css.listPak}>
         {packages.map((pkg, index) => (
