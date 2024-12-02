@@ -102,7 +102,7 @@ export default function Pakiety() {
       description: [text[language].access, "osobny czat", "osobne zoom", "osobna analiza", text[language].bonus, text[language].vipBonus],
       price: "1500",
       salePrice: "1300",
-      buttonHandler: () => handleBuy('price_1QPs0HRpHtXeYF3Z1ldp3xJl', "https://t.me/+20nXNO3gGNY3NWM0"),
+      buttonHandler: () => handleBuy('price_1QPs2XRpHtXeYF3Zd1wXJY9a', "https://t.me/+20nXNO3gGNY3NWM0"),
       buttonText: text[language].buy,
       packageType: "gold"
     }
