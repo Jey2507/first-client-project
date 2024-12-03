@@ -41,7 +41,7 @@ export default function Hero() {
 
         <div className={css.divButton}>
           <a className={css.heroButton} href="#aboutMe">{text[language].button1}</a>
-          <a className={css.heroButton} href="#proreels">{text[language].button2}</a>
+          <a className={css.heroButton} href="#proReels">{text[language].button2}</a>
         </div>
       </div>
 
