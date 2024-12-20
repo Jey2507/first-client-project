@@ -84,7 +84,7 @@ export default function Pakiety() {
       description: [text[language].access, text[language].groupChat],
       price: "420",
       salePrice: "380",
-      buttonHandler: () => handleBuy('price_1QPs03RpHtXeYF3Zs2P7E7MB', "https://t.me/+20nXNO3gGNY3NWM0"),
+      buttonHandler: () => handleBuy('price_1QPs03RpHtXeYF3Zs2P7E7MB', "https://t.me/+LxTmbhH4n19mNTJk"),
       buttonText: text[language].buy,
       packageType: "bronze"
     },
@@ -93,7 +93,7 @@ export default function Pakiety() {
       description: [text[language].access, text[language].groupChat, text[language].zoom, text[language].homework, text[language].bonus],
       price: "690",
       salePrice: "590",
-      buttonHandler: () => handleBuy('price_1QPs1GRpHtXeYF3ZCOgGfzF9', "https://t.me/+20nXNO3gGNY3NWM0"),
+      buttonHandler: () => handleBuy('price_1QPs1GRpHtXeYF3ZCOgGfzF9', "https://t.me/+pB17jsFNSYA4NTY0"),
       buttonText: text[language].buy,
       packageType: "silver"
     },
@@ -102,7 +102,7 @@ export default function Pakiety() {
       description: [text[language].access, "osobny czat", "osobne zoom", "osobna analiza", text[language].bonus, text[language].vipBonus],
       price: "1500",
       salePrice: "1350",
-      buttonHandler: () => handleBuy('price_1QPs2XRpHtXeYF3Zd1wXJY9a', "https://t.me/+20nXNO3gGNY3NWM0"),
+      buttonHandler: () => handleBuy('price_1QPs2XRpHtXeYF3Zd1wXJY9a', "https://t.me/+LxTmbhH4n19mNTJk"),
       buttonText: text[language].buy,
       packageType: "gold"
     }
